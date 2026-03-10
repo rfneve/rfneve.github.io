@@ -3,505 +3,671 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rob Neve - Chief of Staff & Operations Director. I design operational clarity for scaling, revenue-driven teams." />
+  <meta name="description" content="Rob Neve - Chief of Staff, Integrator, and Operations Director. I design operational clarity for scaling, revenue-driven teams." />
   <title>Rob Neve | Neve Consulting</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --bg: #f6f8fa;
+      --surface: #ffffff;
+      --surface-alt: #eef2f4;
+      --text: #111827;
+      --muted: #4b5563;
+      --muted-light: #6b7280;
+      --dark: #121417;
+      --dark-soft: #1c2228;
+      --accent: #2E5159;
+      --accent-light: #97A8AC;
+      --border: #e5e7eb;
+      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      --radius: 16px;
+      --max: 1120px;
+      --reading: 760px;
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-      line-height: 1.6;
-      color: #1a1a1a;
-      background: #ffffff;
-      font-size: 17px;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 18px;
       -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .reading-width {
+      max-width: var(--reading);
     }
 
     /* Navigation */
     nav {
-      position: fixed;
+      position: sticky;
       top: 0;
-      width: 100%;
-      background: rgba(26, 26, 26, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
-      padding: 15px 0;
+      background: rgba(18, 20, 23, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
-    
+
     .nav-container {
-      max-width: 1200px;
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 0 40px;
+      padding: 16px 24px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 20px;
+      gap: 24px;
     }
-    
-    .logo-image { height: 45px; width: auto; }
-    
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .logo-image {
+      height: 40px;
+      width: auto;
+      border-radius: 6px;
+    }
+
+    .brand-text {
+      color: #fff;
+      font-size: 0.96rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
     .nav-links {
       display: flex;
-      gap: 30px;
+      gap: 28px;
       list-style: none;
       flex-wrap: wrap;
+      align-items: center;
     }
-    
+
     .nav-links a {
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.78);
       text-decoration: none;
       font-weight: 500;
       font-size: 0.95rem;
-      transition: color 0.2s;
+      transition: color 0.2s ease;
     }
-    
-    .nav-links a:hover { color: #97A8AC; }
-    
-    .nav-cta {
-      background: #2E5159;
+
+    .nav-links a:hover {
       color: #fff;
-      padding: 10px 24px;
-      border-radius: 6px;
+    }
+
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 999px;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: all 0.2s;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: transform 0.2s ease, background 0.2s ease;
       white-space: nowrap;
     }
-    
+
     .nav-cta:hover {
-      background: #3a646e;
+      background: #39616a;
       transform: translateY(-1px);
     }
 
     /* Hero */
     .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      background:
+        radial-gradient(circle at top right, rgba(151, 168, 172, 0.16), transparent 28%),
+        linear-gradient(135deg, #121417 0%, #1e252b 100%);
       color: #fff;
-      padding: 120px 40px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(46, 81, 89, 0.12) 0%, rgba(151, 168, 172, 0.08) 100%);
-      clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-    }
-    
-    .hero-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .hero-badge {
-      display: inline-block;
-      background: rgba(46, 81, 89, 0.2);
-      border: 1px solid rgba(46, 81, 89, 0.4);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-    
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin-bottom: 24px;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      max-width: 900px;
-    }
-    
-    .hero-highlight { color: #97A8AC; }
-    
-    .hero p {
-      font-size: 1.25rem;
-      color: rgba(255,255,255,0.85);
-      margin-bottom: 40px;
-      line-height: 1.7;
-      max-width: 700px;
-    }
-    
-    .hero-stats {
-      display: flex;
-      gap: 50px;
-      flex-wrap: wrap;
-      margin-top: 50px;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .stat-item { flex: 1; min-width: 200px; }
-    
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #97A8AC;
-      margin-bottom: 8px;
-      line-height: 1;
-    }
-    
-    .stat-label {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.65);
-      line-height: 1.4;
+      padding: 110px 0 88px;
     }
 
-    /* Section Styles */
-    section {
-      padding: 100px 40px;
-      max-width: 1200px;
+    .hero-inner {
+      max-width: var(--max);
       margin: 0 auto;
+      padding: 0 24px;
     }
-    
-    .section-header {
-      margin-bottom: 60px;
-    }
-    
-    .section-label {
-      color: #2E5159;
-      text-transform: uppercase;
-      font-size: 0.85rem;
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(46, 81, 89, 0.22);
+      border: 1px solid rgba(151, 168, 172, 0.2);
+      color: rgba(255,255,255,0.88);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      margin-bottom: 22px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.6rem);
+      font-weight: 800;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+      max-width: 980px;
+      margin-bottom: 24px;
+    }
+
+    .hero-highlight {
+      color: var(--accent-light);
+    }
+
+    .hero p {
+      font-size: 1.16rem;
+      color: rgba(255,255,255,0.84);
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 999px;
+      padding: 14px 22px;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .btn-primary {
+      background: #fff;
+      color: var(--dark);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      background: #f3f4f6;
+    }
+
+    .btn-secondary {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.22);
+      background: rgba(255,255,255,0.04);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.45);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+    }
+
+    .stat-item {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius);
+      padding: 24px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent-light);
+      margin-bottom: 8px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: rgba(255,255,255,0.72);
+      line-height: 1.5;
+    }
+
+    /* Sections */
+    section {
+      padding: 92px 0;
+    }
+
+    .section-header {
+      margin-bottom: 38px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
       margin-bottom: 12px;
     }
-    
+
     .section-title {
-      font-size: 2.5rem;
+      font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 800;
-      margin-bottom: 20px;
-      letter-spacing: -0.02em;
-      line-height: 1.2;
+      letter-spacing: -0.03em;
+      line-height: 1.08;
+      margin-bottom: 16px;
+      max-width: 880px;
     }
-    
+
     .section-description {
-      font-size: 1.15rem;
-      color: #555;
-      line-height: 1.7;
-      max-width: 800px;
+      color: var(--muted);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 760px;
     }
 
     /* About */
     .about {
-      background: #f8f9fa;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    
+
     .about-content {
-      max-width: 800px;
+      max-width: var(--reading);
     }
-    
+
     .about-content p {
-      font-size: 1.1rem;
-      color: #333;
-      line-height: 1.8;
-      margin-bottom: 20px;
+      font-size: 1.05rem;
+      color: #1f2937;
+      line-height: 1.85;
+      margin-bottom: 18px;
+    }
+
+    .quote-card {
+      margin-top: 28px;
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      color: #1f2937;
+    }
+
+    .quote-card p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .quote-card strong {
+      color: var(--dark);
     }
 
     /* Services */
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
     }
-    
+
     .service-card {
-      background: #fff;
-      padding: 40px;
-      border-radius: 10px;
-      border: 2px solid #f0f0f0;
-      transition: all 0.3s;
-      position: relative;
+      background: var(--surface);
+      padding: 30px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
-    
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: #2E5159;
-      border-radius: 10px 0 0 10px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    
+
     .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-      border-color: #2E5159;
+      transform: translateY(-4px);
+      border-color: rgba(46, 81, 89, 0.28);
+      box-shadow: 0 18px 40px rgba(17, 24, 39, 0.10);
     }
-    
-    .service-card:hover::before { opacity: 1; }
-    
+
     .service-number {
-      font-size: 0.8rem;
-      color: #2E5159;
+      font-size: 0.78rem;
+      color: var(--accent);
       font-weight: 800;
-      margin-bottom: 12px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
     }
-    
+
     .service-card h3 {
-      font-size: 1.4rem;
+      font-size: 1.18rem;
       font-weight: 700;
-      margin-bottom: 12px;
-      color: #000;
+      margin-bottom: 10px;
+      color: var(--dark);
+      letter-spacing: -0.02em;
     }
-    
+
     .service-card p {
-      color: #555;
+      color: var(--muted);
       line-height: 1.75;
-      font-size: 1.05rem;
+      font-size: 0.99rem;
     }
 
     /* Experience */
     .experience {
-      background: #fff;
+      background: var(--bg);
     }
-    
+
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
     }
-    
+
     .experience-card {
-      background: #f8f9fa;
-      padding: 35px;
-      border-radius: 10px;
-      border-left: 4px solid #2E5159;
+      background: var(--surface);
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
-    
+
     .experience-metric {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 800;
-      color: #2E5159;
-      margin-bottom: 12px;
-      line-height: 1;
-    }
-    
-    .experience-description {
-      color: #333;
-      font-size: 1.05rem;
-      line-height: 1.6;
+      color: var(--accent);
       margin-bottom: 10px;
+      line-height: 1;
+      letter-spacing: -0.03em;
     }
-    
+
+    .experience-description {
+      color: #1f2937;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin-bottom: 8px;
+    }
+
     .experience-note {
       font-size: 0.9rem;
-      color: #666;
-      font-style: italic;
+      color: var(--muted-light);
     }
 
     /* How I Work */
     .how-work {
-      background: #f8f9fa;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
     }
-    
+
     .how-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 25px;
-      margin-top: 50px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 34px;
     }
-    
+
     .how-card {
-      background: #fff;
-      padding: 35px;
-      border-radius: 10px;
-      border: 1px solid #e5e5e5;
+      background: #fbfcfd;
+      padding: 28px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
     }
-    
+
     .how-step {
-      font-size: 0.8rem;
-      color: #2E5159;
+      font-size: 0.78rem;
+      color: var(--accent);
       font-weight: 800;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       margin-bottom: 10px;
     }
-    
+
     .how-card h3 {
-      font-size: 1.3rem;
+      font-size: 1.14rem;
       margin-bottom: 10px;
       font-weight: 700;
-      color: #000;
+      color: var(--dark);
+      letter-spacing: -0.02em;
     }
-    
+
     .how-card p {
-      color: #555;
+      color: var(--muted);
       line-height: 1.7;
+      font-size: 0.98rem;
     }
 
     /* Contact */
     .contact {
-      background: #2E5159;
+      background: linear-gradient(135deg, var(--accent) 0%, #243f45 100%);
       color: #fff;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 24px;
+      padding: 42px 28px;
       text-align: center;
     }
-    
-    .contact .section-label { color: #97A8AC; }
-    .contact .section-title { color: #fff; }
-    .contact .section-description { color: rgba(255,255,255,0.9); max-width: 700px; margin: 0 auto; }
-    
+
+    .contact .section-label {
+      color: rgba(255,255,255,0.74);
+    }
+
+    .contact .section-title {
+      color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact .section-description {
+      color: rgba(255,255,255,0.88);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .contact-buttons {
       display: flex;
-      gap: 20px;
+      gap: 14px;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 40px;
+      margin-top: 32px;
     }
-    
-    .btn-primary {
+
+    .contact-buttons .btn-primary {
       background: #fff;
-      color: #1a1a1a;
-      padding: 16px 35px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      transition: all 0.2s;
+      color: var(--dark);
     }
-    
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    
-    .btn-secondary {
-      background: transparent;
+
+    .contact-buttons .btn-secondary {
+      border-color: rgba(255,255,255,0.26);
       color: #fff;
-      padding: 16px 35px;
-      border: 2px solid rgba(255,255,255,0.9);
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.05rem;
-      transition: all 0.2s;
+      background: rgba(255,255,255,0.06);
     }
-    
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: #fff;
-    }
-    
+
     .contact-info {
-      margin-top: 30px;
+      margin-top: 24px;
       font-size: 1rem;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.88);
     }
-    
+
     .contact-info a {
       color: #fff;
-      text-decoration: underline;
     }
 
     /* Footer */
     footer {
-      background: #1a1a1a;
+      background: var(--dark);
       color: #fff;
-      padding: 50px 40px 30px;
+      padding: 40px 0 32px;
+    }
+
+    .footer-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
       text-align: center;
     }
-    
+
     .footer-logo {
-      height: 45px;
+      height: 40px;
       width: auto;
-      margin-bottom: 20px;
+      margin: 0 auto 18px;
+      border-radius: 6px;
     }
-    
+
+    .footer-title {
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
     footer p {
-      color: rgba(255,255,255,0.6);
-      font-size: 0.9rem;
-      line-height: 1.6;
-      max-width: 600px;
-      margin: 0 auto 20px;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 650px;
+      margin: 0 auto 18px;
     }
-    
+
     .footer-links {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       justify-content: center;
-      margin-top: 20px;
+      flex-wrap: wrap;
+      margin-top: 18px;
     }
-    
+
     .footer-links a {
-      color: rgba(255,255,255,0.7);
+      color: rgba(255,255,255,0.75);
       text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.2s;
+      font-size: 0.94rem;
     }
-    
-    .footer-links a:hover { color: #97A8AC; }
-    
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
     .footer-bottom {
-      margin-top: 30px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: rgba(255,255,255,0.5);
-      font-size: 0.85rem;
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.46);
+      font-size: 0.84rem;
+    }
+
+    /* Utilities */
+    .hide-broken {
+      display: none !important;
     }
 
     /* Responsive */
+    @media (max-width: 960px) {
+      .hero-stats,
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid,
+      .how-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.1rem; }
-      .section-title { font-size: 2rem; }
-      .hero-stats { gap: 30px; }
-      .stat-item { min-width: 150px; }
-      section { padding: 70px 20px; }
-      .services-grid, .experience-grid, .how-grid { grid-template-columns: 1fr; }
+      body {
+        font-size: 17px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .nav-container {
+        padding: 14px 20px;
+      }
+
+      .hero {
+        padding: 96px 0 72px;
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .hero p,
+      .section-description,
+      .about-content p {
+        font-size: 1rem;
+      }
+
+      .contact-card {
+        padding: 34px 20px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <img src="logo.png" alt="Neve Consulting" class="logo-image" />
+      <div class="brand">
+        <img src="logo.png" alt="Neve Consulting" class="logo-image" onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';" />
+        <div class="brand-text" style="display:none;">Neve Consulting</div>
+      </div>
+
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#how">How I Work</a></li>
       </ul>
+
       <a href="#contact" class="nav-cta">Contact</a>
     </div>
   </nav>
 
-  <!-- Hero -->
   <section class="hero">
-    <div class="hero-content">
+    <div class="hero-inner">
       <div class="hero-badge">Chief of Staff • Integrator • Operations Director</div>
-      
+
       <h1>I build <span class="hero-highlight">operating systems</span> for scaling, revenue-driven teams.</h1>
-      
+
       <p>
-        Most teams don't stall because they lack ideas. They stall because ownership is unclear, handoffs are leaky, data is untrusted, and execution becomes dependent on one or two people. I design the systems, workflows, and operating cadence that keep work moving — even when the company is growing fast.
+        Most teams do not stall because they lack ideas. They stall because ownership is unclear, handoffs are leaky, data is untrusted, and execution becomes dependent on one or two people. I design the systems, workflows, and operating cadence that keep work moving — even when the company is growing fast.
       </p>
-      
+
+      <div class="hero-actions">
+        <a href="mailto:rfneve@gmail.com" class="btn-primary">Start a conversation</a>
+        <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer" class="btn-secondary">View LinkedIn</a>
+      </div>
+
       <div class="hero-stats">
         <div class="stat-item">
           <div class="stat-number">19+</div>
@@ -509,241 +675,228 @@
         </div>
         <div class="stat-item">
           <div class="stat-number">96.95%</div>
-          <div class="stat-label">AR collection rate achieved through process + system redesign</div>
+          <div class="stat-label">AR collection rate achieved through process and system redesign</div>
         </div>
         <div class="stat-item">
           <div class="stat-number">15+ yrs</div>
-          <div class="stat-label">Operating inside revenue orgs: education, financial services, SaaS-adjacent</div>
+          <div class="stat-label">Operating inside revenue organizations across education, financial services, and SaaS-adjacent environments</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- About -->
   <section id="about" class="about">
-    <div class="section-header">
-      <div class="section-label">About</div>
-      <h2 class="section-title">I'm not a "strategy deck" consultant.</h2>
-      <p class="section-description">
-        I operate inside the work: mapping reality, installing systems, tightening handoffs, and building the measurement layer so leadership can see what's happening.
-      </p>
-    </div>
-    
-    <div class="about-content">
-      <p>
-        I'm at my best in scaling environments where execution is costly, and clarity is the constraint. I'm the person who brings structure to chaos — not through motivation or vision, but through systems, ownership clarity, and measurement.
-      </p>
-      <p>
-        "Rob's probably the best I've ever worked with at understanding what things are important and what things aren't important throughout the day." — Sales Leader
-      </p>
-      <p>
-        I've operated as Chief of Staff, Integrator, and Director of Operations across e-learning, financial services, and SaaS-adjacent businesses. I work in chaos and leave behind structure.
-      </p>
+    <div class="container">
+      <div class="section-header reading-width">
+        <div class="section-label">About</div>
+        <h2 class="section-title">I am not a strategy-deck consultant.</h2>
+        <p class="section-description">
+          I operate inside the work: mapping reality, installing systems, tightening handoffs, and building the measurement layer so leadership can see what is actually happening.
+        </p>
+      </div>
+
+      <div class="about-content">
+        <p>
+          I am at my best in scaling environments where execution is costly and clarity is the constraint. I bring structure to chaos — not through motivation or slogans, but through systems, ownership clarity, and measurement.
+        </p>
+        <p>
+          I have operated as Chief of Staff, Integrator, and Director of Operations across e-learning, financial services, and SaaS-adjacent businesses. I work in chaos and leave behind structure.
+        </p>
+
+        <div class="quote-card">
+          <p><strong>“Rob’s probably the best I’ve ever worked with at understanding what things are important and what things aren’t important throughout the day.”</strong> — Sales Leader</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Services -->
   <section id="services" class="services">
-    <div class="section-header">
-      <div class="section-label">Services</div>
-      <h2 class="section-title">Infrastructure that survives the founder.</h2>
-      <p class="section-description">
-        I remove bottlenecks by fixing the underlying mechanics — not by "asking people to try harder."
-      </p>
-    </div>
-    
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="service-number">01</div>
-        <h3>Revenue Systems & RevOps Design</h3>
-        <p>
-          CRM architecture, pipeline logic, stage definitions, SLA enforcement, attribution rules, and reporting you can trust. I fix the mechanics so execution flows.
+    <div class="container">
+      <div class="section-header reading-width">
+        <div class="section-label">Services</div>
+        <h2 class="section-title">Infrastructure that survives the founder.</h2>
+        <p class="section-description">
+          I remove bottlenecks by fixing the underlying mechanics — not by asking people to try harder.
         </p>
       </div>
-      
-      <div class="service-card">
-        <div class="service-number">02</div>
-        <h3>Cross-Functional Integration</h3>
-        <p>
-          Sales ↔ Marketing ↔ CS ↔ Product handoffs. Roles, ownership, expectations, and escalation paths. I reduce friction by making the operating model explicit.
-        </p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-number">03</div>
-        <h3>Data Integrity & Governance</h3>
-        <p>
-          Naming conventions, data maps, source-of-truth rules, automation hygiene, and dashboards that match reality. If leadership can't trust the numbers, they can't run the business.
-        </p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-number">04</div>
-        <h3>Program & Project Delivery</h3>
-        <p>
-          Tech stack migrations, implementation programs, product launches, and process rollouts. PMP discipline applied with practical execution: scope, owners, timelines, UAT, adoption.
-        </p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-number">05</div>
-        <h3>Performance Cadence & Accountability</h3>
-        <p>
-          Weekly operating rhythms, KPIs that drive behavior, rep scorecards, pipeline hygiene standards, and follow-up systems. Accountability becomes normal when the system makes it easy.
-        </p>
-      </div>
-      
-      <div class="service-card">
-        <div class="service-number">06</div>
-        <h3>Operator Coaching for Leaders</h3>
-        <p>
-          Clear thinking, stronger communication, better requirements, and higher standards — without politics. I'm direct, structured, and focused on measurable improvement.
-        </p>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-number">01</div>
+          <h3>Revenue Systems &amp; RevOps Design</h3>
+          <p>CRM architecture, pipeline logic, stage definitions, SLA enforcement, attribution rules, and reporting you can trust. I fix the mechanics so execution flows.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">02</div>
+          <h3>Cross-Functional Integration</h3>
+          <p>Sales, Marketing, CS, and Product handoffs. Roles, ownership, expectations, and escalation paths. I reduce friction by making the operating model explicit.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">03</div>
+          <h3>Data Integrity &amp; Governance</h3>
+          <p>Naming conventions, data maps, source-of-truth rules, automation hygiene, and dashboards that match reality. If leadership cannot trust the numbers, they cannot run the business.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">04</div>
+          <h3>Program &amp; Project Delivery</h3>
+          <p>Tech stack migrations, implementation programs, product launches, and process rollouts. PMP discipline applied with practical execution: scope, owners, timelines, UAT, and adoption.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">05</div>
+          <h3>Performance Cadence &amp; Accountability</h3>
+          <p>Weekly operating rhythms, KPIs that drive behavior, rep scorecards, pipeline hygiene standards, and follow-up systems. Accountability becomes normal when the system makes it easy.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-number">06</div>
+          <h3>Operator Coaching for Leaders</h3>
+          <p>Clear thinking, stronger communication, better requirements, and higher standards without politics. I am direct, structured, and focused on measurable improvement.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience" class="experience">
-    <div class="section-header">
-      <div class="section-label">Experience</div>
-      <h2 class="section-title">What I've moved (bounded, defensible).</h2>
-      <p class="section-description">
-        I'm careful with claims. These are outcomes I can explain with context and mechanism.
-      </p>
-    </div>
-    
-    <div class="experience-grid">
-      <div class="experience-card">
-        <div class="experience-metric">96.95%</div>
-        <p class="experience-description">AR collection rate achieved by redesigning billing, follow-up, and accountability loops</p>
-        <p class="experience-note">Process + ownership redesign (services environment)</p>
+    <div class="container">
+      <div class="section-header reading-width">
+        <div class="section-label">Experience</div>
+        <h2 class="section-title">What I’ve moved, bounded and defensible.</h2>
+        <p class="section-description">
+          I am careful with claims. These are outcomes I can explain with context and mechanism.
+        </p>
       </div>
-      
-      <div class="experience-card">
-        <div class="experience-metric">$27M → $39M</div>
-        <p class="experience-description">Gross funnel revenue growth (2022 to 2023) supported through systems + execution improvements</p>
-        <p class="experience-note">Sales ops + cross-functional execution (education business)</p>
-      </div>
-      
-      <div class="experience-card">
-        <div class="experience-metric">19+</div>
-        <p class="experience-description">Cross-functional projects delivered with developers: CRM builds, migrations, integrations, launches</p>
-        <p class="experience-note">SDLC-lite execution with UAT + adoption</p>
-      </div>
-      
-      <div class="experience-card">
-        <div class="experience-metric">0→1</div>
-        <p class="experience-description">Built reporting + governance where leadership previously operated on partial data</p>
-        <p class="experience-note">Naming conventions, data map, dashboards, cadence</p>
-      </div>
-      
-      <div class="experience-card">
-        <div class="experience-metric">Weekly</div>
-        <p class="experience-description">Operating cadence installed for rep performance: KPIs, coaching loops, and pipeline hygiene</p>
-        <p class="experience-note">Brand-split performance reviews, action items, follow-through</p>
-      </div>
-      
-      <div class="experience-card">
-        <div class="experience-metric">120-day</div>
-        <p class="experience-description">Client onboarding + adoption systems built to reduce dependency and improve compliance</p>
-        <p class="experience-note">Structured enablement + system walk-throughs</p>
+
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-metric">96.95%</div>
+          <p class="experience-description">AR collection rate achieved by redesigning billing, follow-up, and accountability loops.</p>
+          <p class="experience-note">Process and ownership redesign</p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-metric">$27M → $39M</div>
+          <p class="experience-description">Gross funnel revenue growth supported through systems and execution improvements.</p>
+          <p class="experience-note">Sales operations and cross-functional execution</p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-metric">19+</div>
+          <p class="experience-description">Cross-functional projects delivered with developers: CRM builds, migrations, integrations, and launches.</p>
+          <p class="experience-note">SDLC-lite execution with UAT and adoption</p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-metric">0→1</div>
+          <p class="experience-description">Built reporting and governance where leadership previously operated on partial data.</p>
+          <p class="experience-note">Data maps, naming conventions, dashboards, and cadence</p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-metric">Weekly</div>
+          <p class="experience-description">Installed performance cadence for rep coaching, KPIs, and pipeline hygiene.</p>
+          <p class="experience-note">Brand-split operating reviews and action tracking</p>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-metric">120-day</div>
+          <p class="experience-description">Built structured onboarding and adoption systems to reduce dependency and improve compliance.</p>
+          <p class="experience-note">Enablement, walkthroughs, and process discipline</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- How I Work -->
   <section id="how" class="how-work">
-    <div class="section-header">
-      <div class="section-label">How I Work</div>
-      <h2 class="section-title">A repeatable approach. No heroics required.</h2>
-      <p class="section-description">
-        I'm at my best in scaling environments where execution is costly, and clarity is the constraint. This is the sequence I use to turn "busy" into "controlled."
-      </p>
-    </div>
-    
-    <div class="how-grid">
-      <div class="how-card">
-        <div class="how-step">Step 1</div>
-        <h3>Map reality</h3>
-        <p>
-          I audit the current state: process maps, handoffs, failure points, tooling, and "what people actually do." We define the real constraints before designing solutions.
+    <div class="container">
+      <div class="section-header reading-width">
+        <div class="section-label">How I Work</div>
+        <h2 class="section-title">A repeatable approach. No heroics required.</h2>
+        <p class="section-description">
+          This is the sequence I use to turn busy into controlled.
         </p>
       </div>
-      
-      <div class="how-card">
-        <div class="how-step">Step 2</div>
-        <h3>Define ownership + standards</h3>
-        <p>
-          What does "done" mean? Who owns it? What is the SLA? What gets reviewed? Most problems are ownership problems wearing a process costume.
-        </p>
-      </div>
-      
-      <div class="how-card">
-        <div class="how-step">Step 3</div>
-        <h3>Install the system</h3>
-        <p>
-          Workflow design, CRM structure, automation, documentation, and lightweight governance. I build the scaffolding that keeps execution consistent.
-        </p>
-      </div>
-      
-      <div class="how-card">
-        <div class="how-step">Step 4</div>
-        <h3>Make it observable</h3>
-        <p>
-          Dashboards, scorecards, exception alerts, and operating cadence. Leaders should see problems early — not during month-end surprise.
-        </p>
-      </div>
-      
-      <div class="how-card">
-        <div class="how-step">Step 5</div>
-        <h3>Transfer and tighten</h3>
-        <p>
-          Train owners, pressure test edge cases, and refine the system until it runs without me. The best work is what still functions after I step away.
-        </p>
-      </div>
-      
-      <div class="how-card">
-        <div class="how-step">Step 6</div>
-        <h3>Repeat at the next constraint</h3>
-        <p>
-          Scale creates new bottlenecks. We keep iterating where it matters — without blowing up the operating model every quarter.
-        </p>
+
+      <div class="how-grid">
+        <div class="how-card">
+          <div class="how-step">Step 1</div>
+          <h3>Map reality</h3>
+          <p>I audit the current state: process maps, handoffs, failure points, tooling, and what people actually do. We define real constraints before designing solutions.</p>
+        </div>
+
+        <div class="how-card">
+          <div class="how-step">Step 2</div>
+          <h3>Define ownership and standards</h3>
+          <p>What does done mean? Who owns it? What is the SLA? What gets reviewed? Most problems are ownership problems wearing a process costume.</p>
+        </div>
+
+        <div class="how-card">
+          <div class="how-step">Step 3</div>
+          <h3>Install the system</h3>
+          <p>Workflow design, CRM structure, automation, documentation, and lightweight governance. I build the scaffolding that keeps execution consistent.</p>
+        </div>
+
+        <div class="how-card">
+          <div class="how-step">Step 4</div>
+          <h3>Make it observable</h3>
+          <p>Dashboards, scorecards, exception alerts, and operating cadence. Leaders should see problems early, not during month-end surprise.</p>
+        </div>
+
+        <div class="how-card">
+          <div class="how-step">Step 5</div>
+          <h3>Transfer and tighten</h3>
+          <p>Train owners, pressure-test edge cases, and refine the system until it runs without me. The best work still functions after I step away.</p>
+        </div>
+
+        <div class="how-card">
+          <div class="how-step">Step 6</div>
+          <h3>Repeat at the next constraint</h3>
+          <p>Scale creates new bottlenecks. We keep iterating where it matters without blowing up the operating model every quarter.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="contact">
-    <div class="section-header">
-      <div class="section-label">Contact</div>
-      <h2 class="section-title">If you want clarity, I'll tell you the truth.</h2>
-      <p class="section-description">
-        If your business is growing and execution is starting to fracture — data isn't trusted, handoffs are messy, and leadership is stuck in reactive mode — I can help you install an operating system that survives scale.
-      </p>
+    <div class="container">
+      <div class="contact-card">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">If you want clarity, I’ll tell you the truth.</h2>
+        <p class="section-description">
+          If your business is growing and execution is starting to fracture — data is not trusted, handoffs are messy, and leadership is stuck in reactive mode — I can help you install an operating system that survives scale.
+        </p>
+
+        <div class="contact-buttons">
+          <a href="mailto:rfneve@gmail.com" class="btn-primary">Email Me</a>
+          <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer" class="btn-secondary">Connect on LinkedIn</a>
+        </div>
+
+        <p class="contact-info">
+          Prefer phone? <a href="tel:+17042396872">(704) 239-6872</a>
+        </p>
+      </div>
     </div>
-    
-    <div class="contact-buttons">
-      <a href="mailto:rfneve@gmail.com" class="btn-primary">Email Me</a>
-      <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer" class="btn-secondary">Connect on LinkedIn</a>
-    </div>
-    
-    <p class="contact-info">
-      Prefer phone? <a href="tel:+17042396872">(704) 239-6872</a>
-    </p>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <img src="logo.png" alt="Neve Consulting" class="footer-logo" />
-    <p>
-      Neve Consulting, LLC — operational systems architecture for scaling organizations. I build the infrastructure that lets teams execute without heroics.
-    </p>
-    <div class="footer-links">
-      <a href="mailto:rfneve@gmail.com">Email</a>
-      <a href="https://linkedin.com/in/robertneve2" target="_blank">LinkedIn</a>
+    <div class="footer-inner">
+      <img src="logo.png" alt="Neve Consulting" class="footer-logo" onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';" />
+      <div class="footer-title" style="display:none;">Neve Consulting</div>
+
+      <p>
+        Neve Consulting, LLC — operational systems architecture for scaling organizations. I build the infrastructure that lets teams execute without heroics.
+      </p>
+
+      <div class="footer-links">
+        <a href="mailto:rfneve@gmail.com">Email</a>
+        <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+
+      <p class="footer-bottom">&copy; 2026 Neve Consulting, LLC. All rights reserved.</p>
     </div>
-    <p class="footer-bottom">&copy; 2026 Neve Consulting, LLC. All rights reserved.</p>
   </footer>
 </body>
 </html>

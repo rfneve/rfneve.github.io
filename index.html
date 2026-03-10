@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rob Neve - Chief of Staff, Integrator, and Operations Director. I design operational clarity for scaling, revenue-driven teams." />
+  <meta
+    name="description"
+    content="Rob Neve - Chief of Staff, Integrator, and Operations Director. I design operational systems for growing companies."
+  />
   <title>Rob Neve | Neve Consulting</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -93,11 +96,11 @@
     }
 
     .logo-image {
-  height: 65px;
-  width: auto;
-  display: block;
-  object-fit: contain;
-}
+      height: 65px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
 
     .brand-text {
       color: #fff;
@@ -386,7 +389,7 @@
 
     .experience-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
       margin-top: 34px;
     }
@@ -398,19 +401,10 @@
       border: 1px solid var(--border);
     }
 
-    .experience-metric {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent);
-      margin-bottom: 10px;
-      line-height: 1;
-      letter-spacing: -0.03em;
-    }
-
     .experience-description {
       color: #1f2937;
       font-size: 1rem;
-      line-height: 1.65;
+      line-height: 1.7;
       margin-bottom: 8px;
     }
 
@@ -537,11 +531,11 @@
     }
 
     .footer-logo {
-  height: 80px;
-  width: auto;
-  display: block;
-  margin: 0 auto 20px;
-}
+      height: 80px;
+      width: auto;
+      display: block;
+      margin: 0 auto 20px;
+    }
 
     .footer-title {
       font-weight: 700;
@@ -591,11 +585,8 @@
     /* Responsive */
     @media (max-width: 960px) {
       .hero-stats,
-      .experience-grid {
-        grid-template-columns: 1fr;
-      }
-
       .services-grid,
+      .experience-grid,
       .how-grid {
         grid-template-columns: 1fr;
       }
@@ -611,14 +602,12 @@
       }
 
       .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+        padding: 0 20px;
+        height: 90px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
       .hero {
         padding: 96px 0 72px;
@@ -637,6 +626,14 @@
       .contact-card {
         padding: 34px 20px;
       }
+
+      .logo-image {
+        height: 56px;
+      }
+
+      .footer-logo {
+        height: 70px;
+      }
     }
   </style>
 </head>
@@ -645,18 +642,20 @@
   <nav>
     <div class="nav-container">
       <div class="brand">
-        <img src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
-     alt="Neve Consulting"
-     class="logo-image"
-     onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';">
+        <img
+          src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
+          alt="Neve Consulting"
+          class="logo-image"
+          onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';"
+        >
         <div class="brand-text" style="display:none;">Neve Consulting</div>
       </div>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
+        <li><a href="#services">Areas of Work</a></li>
         <li><a href="#experience">Experience</a></li>
-        <li><a href="#how">How I Work</a></li>
+        <li><a href="#how">Approach</a></li>
       </ul>
 
       <a href="#contact" class="nav-cta">Contact</a>
@@ -667,10 +666,14 @@
     <div class="hero-inner">
       <div class="hero-badge">Chief of Staff • Integrator • Operations Director</div>
 
-      <h1>I build <span class="hero-highlight">operating systems</span> for scaling, revenue-driven teams.</h1>
+      <h1>Operational <span class="hero-highlight">systems</span> for growing companies.</h1>
 
       <p>
-        Most teams do not stall because they lack ideas. They stall because ownership is unclear, handoffs are leaky, data is untrusted, and execution becomes dependent on one or two people. I design the systems, workflows, and operating cadence that keep work moving — even when the company is growing fast.
+        I work with leadership teams to design the systems that support execution as organizations scale — revenue operations, cross-functional coordination, reporting infrastructure, and project delivery.
+      </p>
+
+      <p>
+        Most of my work sits between strategy and execution: translating decisions into workflows, ownership structures, CRM architecture, and measurement that teams can actually run.
       </p>
 
       <div class="hero-actions">
@@ -680,16 +683,16 @@
 
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-number">19+</div>
-          <div class="stat-label">Cross-functional programs delivered with Sales, Marketing, CS, Product, and Engineering</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">96.95%</div>
-          <div class="stat-label">AR collection rate achieved through process and system redesign</div>
-        </div>
-        <div class="stat-item">
           <div class="stat-number">15+ yrs</div>
-          <div class="stat-label">Operating inside revenue organizations across education, financial services, and SaaS-adjacent environments</div>
+          <div class="stat-label">Experience across education, financial services, and SaaS-adjacent operating environments</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">19</div>
+          <div class="stat-label">Operational projects involving CRM development, migrations, integrations, and internal systems</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Ops</div>
+          <div class="stat-label">Work spanning revenue operations, reporting infrastructure, cross-functional coordination, and execution systems</div>
         </div>
       </div>
     </div>
@@ -699,18 +702,21 @@
     <div class="container">
       <div class="section-header reading-width">
         <div class="section-label">About</div>
-        <h2 class="section-title">I am not a strategy-deck consultant.</h2>
+        <h2 class="section-title">I work inside operating teams to improve how work moves through an organization.</h2>
         <p class="section-description">
-          I operate inside the work: mapping reality, installing systems, tightening handoffs, and building the measurement layer so leadership can see what is actually happening.
+          As companies grow, execution problems usually show up in a few predictable places: ownership becomes unclear, systems fragment, data becomes unreliable, and coordination between teams breaks down.
         </p>
       </div>
 
       <div class="about-content">
         <p>
-          I am at my best in scaling environments where execution is costly and clarity is the constraint. I bring structure to chaos — not through motivation or slogans, but through systems, ownership clarity, and measurement.
+          My role is to bring structure to those areas — designing the operational systems that support consistent execution.
         </p>
         <p>
-          I have operated as Chief of Staff, Integrator, and Director of Operations across e-learning, financial services, and SaaS-adjacent businesses. I work in chaos and leave behind structure.
+          Over the past fifteen years I’ve worked across education, financial services, and SaaS-adjacent businesses in roles including Chief of Staff, Sales Operations Director, and Operations Lead. My work typically involves revenue systems, CRM architecture, reporting infrastructure, and cross-functional execution.
+        </p>
+        <p>
+          I operate directly inside the work: mapping current processes, redesigning workflows, implementing systems, and supporting teams as those systems become part of daily operations.
         </p>
 
         <div class="quote-card">
@@ -723,48 +729,44 @@
   <section id="services" class="services">
     <div class="container">
       <div class="section-header reading-width">
-        <div class="section-label">Services</div>
-        <h2 class="section-title">Infrastructure that survives the founder.</h2>
+        <div class="section-label">Areas of Work</div>
+        <h2 class="section-title">The work is usually operational, cross-functional, and execution focused.</h2>
         <p class="section-description">
-          I remove bottlenecks by fixing the underlying mechanics — not by asking people to try harder.
+          My involvement typically sits where leadership decisions need to become systems, workflows, reporting, and day-to-day execution.
         </p>
       </div>
 
       <div class="services-grid">
         <div class="service-card">
           <div class="service-number">01</div>
-          <h3>Revenue Systems &amp; RevOps Design</h3>
-          <p>CRM architecture, pipeline logic, stage definitions, SLA enforcement, attribution rules, and reporting you can trust. I fix the mechanics so execution flows.</p>
+          <h3>Revenue Operations</h3>
+          <p>
+            Designing the systems that support revenue organizations, including CRM architecture, pipeline structure, stage definitions, reporting frameworks, and the operational processes that connect marketing, sales, and customer success.
+          </p>
         </div>
 
         <div class="service-card">
           <div class="service-number">02</div>
-          <h3>Cross-Functional Integration</h3>
-          <p>Sales, Marketing, CS, and Product handoffs. Roles, ownership, expectations, and escalation paths. I reduce friction by making the operating model explicit.</p>
+          <h3>Cross-Functional Execution</h3>
+          <p>
+            Improving coordination between teams responsible for delivering revenue and customer outcomes. This often includes clarifying ownership, redesigning handoffs, and establishing operating rhythms that keep work moving across departments.
+          </p>
         </div>
 
         <div class="service-card">
           <div class="service-number">03</div>
-          <h3>Data Integrity &amp; Governance</h3>
-          <p>Naming conventions, data maps, source-of-truth rules, automation hygiene, and dashboards that match reality. If leadership cannot trust the numbers, they cannot run the business.</p>
+          <h3>Data &amp; Reporting Infrastructure</h3>
+          <p>
+            Building reporting layers leadership teams can rely on. Work typically includes data structure, governance standards, dashboards, and the systems used to track performance across revenue organizations.
+          </p>
         </div>
 
         <div class="service-card">
           <div class="service-number">04</div>
           <h3>Program &amp; Project Delivery</h3>
-          <p>Tech stack migrations, implementation programs, product launches, and process rollouts. PMP discipline applied with practical execution: scope, owners, timelines, UAT, and adoption.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">05</div>
-          <h3>Performance Cadence &amp; Accountability</h3>
-          <p>Weekly operating rhythms, KPIs that drive behavior, rep scorecards, pipeline hygiene standards, and follow-up systems. Accountability becomes normal when the system makes it easy.</p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">06</div>
-          <h3>Operator Coaching for Leaders</h3>
-          <p>Clear thinking, stronger communication, better requirements, and higher standards without politics. I am direct, structured, and focused on measurable improvement.</p>
+          <p>
+            Leading complex operational projects such as CRM implementations, system migrations, product launches, and process redesign. My project background provides structure around scope, timelines, ownership, and adoption.
+          </p>
         </div>
       </div>
     </div>
@@ -773,48 +775,40 @@
   <section id="experience" class="experience">
     <div class="container">
       <div class="section-header reading-width">
-        <div class="section-label">Experience</div>
-        <h2 class="section-title">What I’ve moved, bounded and defensible.</h2>
+        <div class="section-label">Selected Experience</div>
+        <h2 class="section-title">Work I can explain clearly, with context.</h2>
         <p class="section-description">
-          I am careful with claims. These are outcomes I can explain with context and mechanism.
+          I prefer grounded descriptions over headline claims. These examples reflect the types of work I’ve led or supported inside operating environments.
         </p>
       </div>
 
       <div class="experience-grid">
         <div class="experience-card">
-          <div class="experience-metric">96.95%</div>
-          <p class="experience-description">AR collection rate achieved by redesigning billing, follow-up, and accountability loops.</p>
-          <p class="experience-note">Process and ownership redesign</p>
+          <p class="experience-description">
+            Supported revenue operations for education businesses where annual funnel revenue expanded from approximately $27M to $39M between 2022 and 2023.
+          </p>
+          <p class="experience-note">Systems, reporting infrastructure, and cross-department execution</p>
         </div>
 
         <div class="experience-card">
-          <div class="experience-metric">$27M → $39M</div>
-          <p class="experience-description">Gross funnel revenue growth supported through systems and execution improvements.</p>
-          <p class="experience-note">Sales operations and cross-functional execution</p>
+          <p class="experience-description">
+            Led or supported nineteen operational projects involving CRM development, system migrations, integrations, and internal infrastructure improvements.
+          </p>
+          <p class="experience-note">Project delivery, developer coordination, testing, and rollout support</p>
         </div>
 
         <div class="experience-card">
-          <div class="experience-metric">19+</div>
-          <p class="experience-description">Cross-functional projects delivered with developers: CRM builds, migrations, integrations, and launches.</p>
-          <p class="experience-note">SDLC-lite execution with UAT and adoption</p>
+          <p class="experience-description">
+            Designed reporting and governance frameworks used by leadership teams to track revenue performance, project execution, and operational health.
+          </p>
+          <p class="experience-note">Reporting structure, naming standards, and management visibility</p>
         </div>
 
         <div class="experience-card">
-          <div class="experience-metric">0→1</div>
-          <p class="experience-description">Built reporting and governance where leadership previously operated on partial data.</p>
-          <p class="experience-note">Data maps, naming conventions, dashboards, and cadence</p>
-        </div>
-
-        <div class="experience-card">
-          <div class="experience-metric">Weekly</div>
-          <p class="experience-description">Installed performance cadence for rep coaching, KPIs, and pipeline hygiene.</p>
-          <p class="experience-note">Brand-split operating reviews and action tracking</p>
-        </div>
-
-        <div class="experience-card">
-          <div class="experience-metric">120-day</div>
-          <p class="experience-description">Built structured onboarding and adoption systems to reduce dependency and improve compliance.</p>
-          <p class="experience-note">Enablement, walkthroughs, and process discipline</p>
+          <p class="experience-description">
+            Redesigned billing and follow-up processes that significantly improved collections consistency within a services organization.
+          </p>
+          <p class="experience-note">Process design, accountability loops, and operational follow-through</p>
         </div>
       </div>
     </div>
@@ -823,48 +817,60 @@
   <section id="how" class="how-work">
     <div class="container">
       <div class="section-header reading-width">
-        <div class="section-label">How I Work</div>
-        <h2 class="section-title">A repeatable approach. No heroics required.</h2>
+        <div class="section-label">Approach</div>
+        <h2 class="section-title">A consistent sequence for operational work.</h2>
         <p class="section-description">
-          This is the sequence I use to turn busy into controlled.
+          The work changes by company. The sequence usually does not.
         </p>
       </div>
 
       <div class="how-grid">
         <div class="how-card">
           <div class="how-step">Step 1</div>
-          <h3>Map reality</h3>
-          <p>I audit the current state: process maps, handoffs, failure points, tooling, and what people actually do. We define real constraints before designing solutions.</p>
+          <h3>Map the current system</h3>
+          <p>
+            Understand how work actually moves through the organization, including tools, ownership, handoffs, and failure points.
+          </p>
         </div>
 
         <div class="how-card">
           <div class="how-step">Step 2</div>
-          <h3>Define ownership and standards</h3>
-          <p>What does done mean? Who owns it? What is the SLA? What gets reviewed? Most problems are ownership problems wearing a process costume.</p>
+          <h3>Define structure</h3>
+          <p>
+            Clarify ownership, standards, and expectations around how work should move across teams.
+          </p>
         </div>
 
         <div class="how-card">
           <div class="how-step">Step 3</div>
-          <h3>Install the system</h3>
-          <p>Workflow design, CRM structure, automation, documentation, and lightweight governance. I build the scaffolding that keeps execution consistent.</p>
+          <h3>Implement systems</h3>
+          <p>
+            Design workflows, CRM structure, reporting frameworks, automation logic, and supporting documentation.
+          </p>
         </div>
 
         <div class="how-card">
           <div class="how-step">Step 4</div>
-          <h3>Make it observable</h3>
-          <p>Dashboards, scorecards, exception alerts, and operating cadence. Leaders should see problems early, not during month-end surprise.</p>
+          <h3>Make performance visible</h3>
+          <p>
+            Build dashboards and operating rhythms that allow leadership teams to monitor execution and identify issues early.
+          </p>
         </div>
 
         <div class="how-card">
           <div class="how-step">Step 5</div>
-          <h3>Transfer and tighten</h3>
-          <p>Train owners, pressure-test edge cases, and refine the system until it runs without me. The best work still functions after I step away.</p>
+          <h3>Transfer ownership</h3>
+          <p>
+            Ensure the system remains functional without ongoing external support by training the right owners and tightening the operating model.
+          </p>
         </div>
 
         <div class="how-card">
           <div class="how-step">Step 6</div>
-          <h3>Repeat at the next constraint</h3>
-          <p>Scale creates new bottlenecks. We keep iterating where it matters without blowing up the operating model every quarter.</p>
+          <h3>Refine where needed</h3>
+          <p>
+            As growth creates new constraints, the system is adjusted without rebuilding everything from scratch.
+          </p>
         </div>
       </div>
     </div>
@@ -874,9 +880,9 @@
     <div class="container">
       <div class="contact-card">
         <div class="section-label">Contact</div>
-        <h2 class="section-title">If you want clarity, I’ll tell you the truth.</h2>
+        <h2 class="section-title">Open to the right operational problems.</h2>
         <p class="section-description">
-          If your business is growing and execution is starting to fracture — data is not trusted, handoffs are messy, and leadership is stuck in reactive mode — I can help you install an operating system that survives scale.
+          If your organization is growing and execution is becoming more complex — across revenue systems, reporting infrastructure, or cross-team coordination — I’m open to a conversation.
         </p>
 
         <div class="contact-buttons">
@@ -893,14 +899,16 @@
 
   <footer>
     <div class="footer-inner">
-      <img src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
-     alt="Neve Consulting"
-     class="logo-image"
-     onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';">
+      <img
+        src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
+        alt="Neve Consulting"
+        class="footer-logo"
+        onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';"
+      >
       <div class="footer-title" style="display:none;">Neve Consulting</div>
 
       <p>
-        Neve Consulting, LLC — operational systems architecture for scaling organizations. I build the infrastructure that lets teams execute without heroics.
+        Neve Consulting, LLC — operational systems, reporting infrastructure, and cross-functional execution for growing organizations.
       </p>
 
       <div class="footer-links">

@@ -3,54 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta
-    name="description"
-    content="Rob Neve - Chief of Staff, Integrator, and Operations Director. I design operational systems for growing companies."
-  />
+  <meta name="description" content="Rob Neve - Operator, Chief of Staff, and Director of Operations. Systems, execution, and cross-functional leadership." />
   <title>Rob Neve | Neve Consulting</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      --bg: #f6f8fa;
-      --surface: #ffffff;
-      --surface-alt: #eef2f4;
-      --text: #111827;
-      --muted: #4b5563;
-      --muted-light: #6b7280;
-      --dark: #121417;
-      --dark-soft: #1c2228;
-      --accent: #2E5159;
-      --accent-light: #97A8AC;
-      --border: #e5e7eb;
-      --shadow: 0 10px 30px rgba(17, 24, 39, 0.08);
+      --bg: #0f1113;
+      --bg-soft: #171a1d;
+      --panel: #ffffff;
+      --panel-soft: #f5f7f8;
+      --text: #16181a;
+      --text-soft: #4f5a61;
+      --text-inverse: #f4f6f7;
+      --muted: #a7b1b7;
+      --line: #dde3e6;
+      --brand: #2E5159;
+      --brand-2: #97A8AC;
+      --max: 1180px;
       --radius: 16px;
-      --max: 1120px;
-      --reading: 760px;
+      --shadow: 0 14px 34px rgba(0,0,0,0.08);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html {
       scroll-behavior: smooth;
     }
 
     body {
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #ffffff;
       color: var(--text);
-      background: var(--bg);
-      font-size: 18px;
+      line-height: 1.65;
+      font-size: 17px;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
 
     img {
       max-width: 100%;
-      height: auto;
       display: block;
     }
 
@@ -61,53 +55,100 @@
     .container {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 24px;
+      padding: 0 28px;
     }
 
-    .reading-width {
-      max-width: var(--reading);
+    .section {
+      padding: 96px 0;
     }
 
-    /* Navigation */
+    .section-dark {
+      background: var(--bg);
+      color: var(--text-inverse);
+    }
+
+    .section-soft {
+      background: var(--panel-soft);
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--brand);
+      margin-bottom: 16px;
+    }
+
+    .section-dark .eyebrow {
+      color: var(--brand-2);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 750;
+      margin-bottom: 10px;
+    }
+
+    p.lead {
+      font-size: 1.14rem;
+      color: var(--text-soft);
+      max-width: 760px;
+    }
+
+    .section-dark p.lead {
+      color: rgba(244,246,247,0.82);
+    }
+
+    /* Nav */
     nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(18, 20, 23, 0.92);
-      backdrop-filter: blur(10px);
+      background: rgba(15,17,19,0.92);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
-    .nav-container {
+    .nav-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 16px 24px;
+      padding: 14px 28px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       gap: 24px;
     }
 
-    .brand {
+    .nav-brand {
       display: flex;
       align-items: center;
       gap: 14px;
+      text-decoration: none;
       min-width: 0;
     }
 
-    .logo-image {
-      height: 65px;
+    .nav-logo {
+      height: 48px;
       width: auto;
-      display: block;
       object-fit: contain;
-    }
-
-    .brand-text {
-      color: #fff;
-      font-size: 0.96rem;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      white-space: nowrap;
     }
 
     .nav-links {
@@ -115,809 +156,825 @@
       gap: 28px;
       list-style: none;
       flex-wrap: wrap;
-      align-items: center;
     }
 
     .nav-links a {
-      color: rgba(255,255,255,0.78);
       text-decoration: none;
-      font-weight: 500;
+      color: rgba(255,255,255,0.82);
       font-size: 0.95rem;
-      transition: color 0.2s ease;
+      font-weight: 600;
     }
 
     .nav-links a:hover {
       color: #fff;
     }
 
-    .nav-cta {
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 18px;
-      border-radius: 999px;
+    .nav-contact {
       text-decoration: none;
-      font-weight: 700;
+      color: #fff;
+      background: var(--brand);
+      padding: 11px 18px;
+      border-radius: 10px;
       font-size: 0.92rem;
-      transition: transform 0.2s ease, background 0.2s ease;
+      font-weight: 700;
       white-space: nowrap;
-    }
-
-    .nav-cta:hover {
-      background: #39616a;
-      transform: translateY(-1px);
     }
 
     /* Hero */
     .hero {
       background:
-        radial-gradient(circle at top right, rgba(151, 168, 172, 0.16), transparent 28%),
-        linear-gradient(135deg, #121417 0%, #1e252b 100%);
-      color: #fff;
-      padding: 110px 0 88px;
+        linear-gradient(135deg, rgba(46,81,89,0.18), rgba(151,168,172,0.08)),
+        var(--bg);
+      color: var(--text-inverse);
+      padding: 82px 0 88px;
     }
 
-    .hero-inner {
-      max-width: var(--max);
-      margin: 0 auto;
-      padding: 0 24px;
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 48px;
+      align-items: center;
     }
 
     .hero-badge {
       display: inline-block;
-      background: rgba(46, 81, 89, 0.22);
-      border: 1px solid rgba(151, 168, 172, 0.2);
-      color: rgba(255,255,255,0.88);
+      margin-bottom: 18px;
       padding: 8px 14px;
       border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.86);
       font-size: 0.82rem;
-      margin-bottom: 22px;
       font-weight: 700;
-      letter-spacing: 0.04em;
       text-transform: uppercase;
-    }
-
-    .hero h1 {
-      font-size: clamp(2.7rem, 6vw, 4.6rem);
-      font-weight: 800;
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      max-width: 980px;
-      margin-bottom: 24px;
-    }
-
-    .hero-highlight {
-      color: var(--accent-light);
+      letter-spacing: 0.08em;
     }
 
     .hero p {
-      font-size: 1.16rem;
-      color: rgba(255,255,255,0.84);
+      margin-top: 22px;
       max-width: 760px;
-      margin-bottom: 34px;
+      color: rgba(244,246,247,0.82);
+      font-size: 1.12rem;
     }
 
     .hero-actions {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 48px;
+      margin-top: 28px;
     }
 
-    .btn-primary,
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+    .button {
+      display: inline-block;
       text-decoration: none;
-      font-weight: 700;
-      border-radius: 999px;
-      padding: 14px 22px;
-      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-weight: 750;
+      transition: 0.2s ease;
     }
 
-    .btn-primary {
+    .button-primary {
       background: #fff;
-      color: var(--dark);
+      color: var(--text);
     }
 
-    .btn-primary:hover {
+    .button-primary:hover {
       transform: translateY(-1px);
-      background: #f3f4f6;
     }
 
-    .btn-secondary {
+    .button-secondary {
+      border: 1px solid rgba(255,255,255,0.18);
       color: #fff;
-      border: 1px solid rgba(255,255,255,0.22);
-      background: rgba(255,255,255,0.04);
-    }
-
-    .btn-secondary:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.45);
-      background: rgba(255,255,255,0.08);
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
-      padding-top: 28px;
-      border-top: 1px solid rgba(255,255,255,0.10);
-    }
-
-    .stat-item {
       background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: var(--radius);
-      padding: 24px;
     }
 
-    .stat-number {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--accent-light);
-      margin-bottom: 8px;
-      line-height: 1;
-      letter-spacing: -0.03em;
+    .hero-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 22px;
+      padding: 18px;
+      box-shadow: 0 18px 48px rgba(0,0,0,0.22);
     }
 
-    .stat-label {
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.72);
-      line-height: 1.5;
+    .hero-photo {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 16px;
+      background: #222;
     }
 
-    /* Sections */
-    section {
-      padding: 92px 0;
+    .hero-note {
+      margin-top: 16px;
+      font-size: 0.96rem;
+      color: rgba(244,246,247,0.74);
     }
 
-    .section-header {
-      margin-bottom: 38px;
+    /* Quote strip */
+    .quote-strip {
+      padding: 34px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-top: 42px;
     }
 
-    .section-label {
-      color: var(--accent);
-      text-transform: uppercase;
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      margin-bottom: 12px;
+    .quote-strip blockquote {
+      font-size: 1.05rem;
+      color: rgba(244,246,247,0.9);
+      max-width: 940px;
     }
 
-    .section-title {
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.08;
-      margin-bottom: 16px;
-      max-width: 880px;
-    }
-
-    .section-description {
-      color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.75;
-      max-width: 760px;
+    .quote-strip cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: rgba(244,246,247,0.64);
+      font-size: 0.92rem;
     }
 
     /* About */
-    .about {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      gap: 42px;
+      align-items: start;
     }
 
-    .about-content {
-      max-width: var(--reading);
-    }
-
-    .about-content p {
-      font-size: 1.05rem;
-      color: #1f2937;
-      line-height: 1.85;
-      margin-bottom: 18px;
+    .about-copy p + p {
+      margin-top: 16px;
     }
 
     .quote-card {
-      margin-top: 28px;
-      background: var(--surface-alt);
-      border: 1px solid var(--border);
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 24px;
-      color: #1f2937;
-    }
-
-    .quote-card p {
-      margin-bottom: 0;
-      font-size: 1rem;
-    }
-
-    .quote-card strong {
-      color: var(--dark);
-    }
-
-    /* Services */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .service-card {
-      background: var(--surface);
-      padding: 30px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
       box-shadow: var(--shadow);
-      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
     }
 
-    .service-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(46, 81, 89, 0.28);
-      box-shadow: 0 18px 40px rgba(17, 24, 39, 0.10);
-    }
-
-    .service-number {
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      margin-bottom: 10px;
-    }
-
-    .service-card h3 {
-      font-size: 1.18rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--dark);
-      letter-spacing: -0.02em;
-    }
-
-    .service-card p {
-      color: var(--muted);
-      line-height: 1.75;
-      font-size: 0.99rem;
-    }
-
-    /* Experience */
-    .experience {
-      background: var(--bg);
-    }
-
-    .experience-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .experience-card {
-      background: var(--surface);
-      padding: 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .experience-description {
-      color: #1f2937;
+    .quote-card blockquote {
       font-size: 1rem;
-      line-height: 1.7;
-      margin-bottom: 8px;
+      color: var(--text);
     }
 
-    .experience-note {
-      font-size: 0.9rem;
-      color: var(--muted-light);
-    }
-
-    /* How I Work */
-    .how-work {
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .how-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 22px;
-      margin-top: 34px;
-    }
-
-    .how-card {
-      background: #fbfcfd;
-      padding: 28px;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
-
-    .how-step {
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .how-card h3 {
-      font-size: 1.14rem;
-      margin-bottom: 10px;
+    .quote-card cite {
+      display: block;
+      margin-top: 12px;
+      font-style: normal;
+      font-size: 0.92rem;
+      color: var(--text-soft);
       font-weight: 700;
-      color: var(--dark);
-      letter-spacing: -0.02em;
     }
 
-    .how-card p {
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 0.98rem;
+    /* Capability grid */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .cap-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .cap-index {
+      color: var(--brand);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      margin-bottom: 12px;
+    }
+
+    .cap-card p {
+      color: var(--text-soft);
+    }
+
+    /* Outcomes */
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .outcome-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius);
+      padding: 28px;
+    }
+
+    .outcome-stat {
+      font-size: 2.4rem;
+      font-weight: 850;
+      color: var(--brand-2);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .outcome-card p {
+      color: rgba(244,246,247,0.84);
+    }
+
+    .outcome-note {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: rgba(244,246,247,0.58);
+    }
+
+    /* Timeline */
+    .timeline {
+      margin-top: 40px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+
+    .timeline-role {
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .timeline-date {
+      color: var(--text-soft);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .timeline-company {
+      color: var(--brand);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .timeline-item p {
+      color: var(--text-soft);
+    }
+
+    /* Quotes wall */
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .quotes-grid .quote-card {
+      height: 100%;
     }
 
     /* Contact */
-    .contact {
-      background: linear-gradient(135deg, var(--accent) 0%, #243f45 100%);
-      color: #fff;
+    .contact-panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: var(--shadow);
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
     }
 
-    .contact-card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 24px;
-      padding: 42px 28px;
-      text-align: center;
-    }
-
-    .contact .section-label {
-      color: rgba(255,255,255,0.74);
-    }
-
-    .contact .section-title {
-      color: #fff;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact .section-description {
-      color: rgba(255,255,255,0.88);
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .contact-buttons {
+    .contact-links {
       display: flex;
       gap: 14px;
-      justify-content: center;
       flex-wrap: wrap;
-      margin-top: 32px;
     }
 
-    .contact-buttons .btn-primary {
+    .contact-links a {
+      text-decoration: none;
+      color: var(--text);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-weight: 700;
       background: #fff;
-      color: var(--dark);
-    }
-
-    .contact-buttons .btn-secondary {
-      border-color: rgba(255,255,255,0.26);
-      color: #fff;
-      background: rgba(255,255,255,0.06);
-    }
-
-    .contact-info {
-      margin-top: 24px;
-      font-size: 1rem;
-      color: rgba(255,255,255,0.88);
-    }
-
-    .contact-info a {
-      color: #fff;
     }
 
     /* Footer */
     footer {
-      background: var(--dark);
-      color: #fff;
-      padding: 40px 0 32px;
+      background: var(--bg);
+      color: rgba(244,246,247,0.74);
+      padding: 40px 0;
     }
 
     .footer-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 0 24px;
-      text-align: center;
+      padding: 0 28px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .footer-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
     }
 
     .footer-logo {
-      height: 80px;
+      height: 56px;
       width: auto;
-      display: block;
-      margin: 0 auto 20px;
+      object-fit: contain;
     }
 
-    .footer-title {
-      font-weight: 700;
-      margin-bottom: 10px;
-      letter-spacing: -0.02em;
-    }
-
-    footer p {
-      color: rgba(255,255,255,0.62);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 650px;
-      margin: 0 auto 18px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 18px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 18px;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.75);
-      text-decoration: none;
-      font-size: 0.94rem;
-    }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
-
-    .footer-bottom {
-      margin-top: 24px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.46);
-      font-size: 0.84rem;
-    }
-
-    /* Utilities */
-    .hide-broken {
-      display: none !important;
+    .footer-meta {
+      font-size: 0.92rem;
     }
 
     /* Responsive */
-    @media (max-width: 960px) {
-      .hero-stats,
-      .services-grid,
-      .experience-grid,
-      .how-grid {
+    @media (max-width: 980px) {
+      .hero-grid,
+      .about-grid,
+      .cap-grid,
+      .outcomes-grid,
+      .quotes-grid,
+      .contact-panel {
         grid-template-columns: 1fr;
+      }
+
+      .hero-card {
+        max-width: 520px;
       }
     }
 
-    @media (max-width: 768px) {
-      body {
-        font-size: 17px;
-      }
-
+    @media (max-width: 760px) {
       .nav-links {
         display: none;
       }
 
-      .nav-container {
-        padding: 0 20px;
-        height: 90px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+      .nav-contact {
+        display: none;
       }
 
+      .section,
       .hero {
-        padding: 96px 0 72px;
+        padding-top: 72px;
+        padding-bottom: 72px;
       }
 
-      section {
-        padding: 74px 0;
+      .container,
+      .nav-inner,
+      .footer-inner {
+        padding-left: 20px;
+        padding-right: 20px;
       }
 
-      .hero p,
-      .section-description,
-      .about-content p {
-        font-size: 1rem;
-      }
-
-      .contact-card {
-        padding: 34px 20px;
-      }
-
-      .logo-image {
-        height: 56px;
+      .nav-logo {
+        height: 42px;
       }
 
       .footer-logo {
-        height: 70px;
+        height: 48px;
       }
     }
   </style>
 </head>
-
 <body>
+
+  <!--
+    REPLACE THESE TWO URLS
+    1) logo_horizontal.png
+    2) rob-front-looking.jpeg
+  -->
+  <script>
+    const LOGO_URL = "https://YOUR-GITHUB-RAW-URL/logo_horizontal.png";
+    const HEADSHOT_URL = "https://YOUR-GITHUB-RAW-URL/rob-front-looking.jpeg";
+  </script>
+
   <nav>
-    <div class="nav-container">
-      <div class="brand">
-        <img
-          src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
-          alt="Neve Consulting"
-          class="logo-image"
-          onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';"
-        >
-        <div class="brand-text" style="display:none;">Neve Consulting</div>
-      </div>
+    <div class="nav-inner">
+      <a href="#top" class="nav-brand" aria-label="Neve Consulting home">
+        <img id="navLogo" class="nav-logo" src="" alt="Neve Consulting logo" />
+      </a>
 
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
-        <li><a href="#services">Areas of Work</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#how">Approach</a></li>
+        <li><a href="#work">Areas of Work</a></li>
+        <li><a href="#outcomes">Selected Outcomes</a></li>
+        <li><a href="#timeline">Career Snapshot</a></li>
+        <li><a href="#quotes">Quotes</a></li>
       </ul>
 
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a class="nav-contact" href="mailto:rob@neveconsulting.com">rob@neveconsulting.com</a>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-badge">Chief of Staff • Integrator • Operations Director</div>
+  <main id="top">
 
-      <h1>Operational <span class="hero-highlight">systems</span> for growing companies.</h1>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="hero-badge">Chief of Staff • Integrator • Director of Operations</div>
+            <h1>Systems, execution, and cross-functional leadership.</h1>
+            <p>
+              I work at the point where strategy breaks down and execution needs structure. My background sits across operations, project leadership, revenue systems, data integrity, communication, and accountability. I have spent more than a decade building clarity inside organizations where growth, complexity, and handoffs create friction.
+            </p>
+            <p>
+              This site is a portfolio. It is meant to show how I think, what I build, and the kind of work I have done.
+            </p>
 
-      <p>
-        I work with leadership teams to design the systems that support execution as organizations scale — revenue operations, cross-functional coordination, reporting infrastructure, and project delivery.
-      </p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="mailto:rob@neveconsulting.com">rob@neveconsulting.com</a>
+              <a class="button button-secondary" href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
 
-      <p>
-        Most of my work sits between strategy and execution: translating decisions into workflows, ownership structures, CRM architecture, and measurement that teams can actually run.
-      </p>
+            <div class="quote-strip">
+              <blockquote>
+                "Man, I wish I had someone like Rob. Rob's probably the best who's ever worked with me at doing it. Understanding what things are important and what things, that I say, aren't important throughout the day."
+              </blockquote>
+              <cite>Nick Fisher (March 25, 2024)</cite>
+            </div>
+          </div>
 
-      <div class="hero-actions">
-        <a href="mailto:rfneve@gmail.com" class="btn-primary">Start a conversation</a>
-        <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer" class="btn-secondary">View LinkedIn</a>
-      </div>
-
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-number">15+ yrs</div>
-          <div class="stat-label">Experience across education, financial services, and SaaS-adjacent operating environments</div>
+          <div class="hero-card">
+            <img id="heroPhoto" class="hero-photo" src="" alt="Rob Neve portrait" />
+            <p class="hero-note">
+              Rob Neve<br />
+              Neve Consulting, LLC<br />
+              rob@neveconsulting.com<br />
+              425-414-4375
+            </p>
+          </div>
         </div>
-        <div class="stat-item">
-          <div class="stat-number">19</div>
-          <div class="stat-label">Operational projects involving CRM development, migrations, integrations, and internal systems</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">Ops</div>
-          <div class="stat-label">Work spanning revenue operations, reporting infrastructure, cross-functional coordination, and execution systems</div>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-header reading-width">
-        <div class="section-label">About</div>
-        <h2 class="section-title">I work inside operating teams to improve how work moves through an organization.</h2>
-        <p class="section-description">
-          As companies grow, execution problems usually show up in a few predictable places: ownership becomes unclear, systems fragment, data becomes unreliable, and coordination between teams breaks down.
-        </p>
-      </div>
-
-      <div class="about-content">
-        <p>
-          My role is to bring structure to those areas — designing the operational systems that support consistent execution.
-        </p>
-        <p>
-          Over the past fifteen years I’ve worked across education, financial services, and SaaS-adjacent businesses in roles including Chief of Staff, Sales Operations Director, and Operations Lead. My work typically involves revenue systems, CRM architecture, reporting infrastructure, and cross-functional execution.
-        </p>
-        <p>
-          I operate directly inside the work: mapping current processes, redesigning workflows, implementing systems, and supporting teams as those systems become part of daily operations.
+    <section id="about" class="section">
+      <div class="container">
+        <span class="eyebrow">About</span>
+        <h2>What I do well</h2>
+        <p class="lead">
+          I build structure where there is ambiguity. I map reality, tighten process, clarify ownership, improve communication, and make performance more visible. My value has never come from volume of motion. It has come from seeing what is breaking, why it is breaking, and what needs to be built so the work can move.
         </p>
 
-        <div class="quote-card">
-          <p><strong>“Rob’s probably the best I’ve ever worked with at understanding what things are important and what things aren’t important throughout the day.”</strong> — Sales Leader</p>
+        <div class="about-grid" style="margin-top: 40px;">
+          <div class="about-copy">
+            <p>
+              My career has developed across education businesses, financial services, revenue organizations, and operator-heavy environments where execution matters. I have worked as Chief of Staff, Integrator, Director of Operations, Sales Operations Director, Publishing Partner, and in adjacent roles where the real work sat between departments rather than neatly inside one of them.
+            </p>
+            <p>
+              I am at my best inside environments that need systems, operating cadence, process architecture, project leadership, clean communication, and accountability. I do not need spotlight. I do not need noise. I want the work to function.
+            </p>
+            <p>
+              I have spent over 10 years working cross-functionally deploying, building, improving, and operationalizing projects and systems. The 19 projects listed on my resume were a resume constraint, not the totality of my work.
+            </p>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "@Rob Neve ++3 Houston. For being an amazing executor for the sales org lately. I know he has his hands in all departments but the work you have helped myself and the managers facilitate alone wouldn't have been possible without you. I can't even put into words how much you are transforming the sales org for the better and its just the beginning."
+            </blockquote>
+            <cite>Image 1 (amazing_executor.png)</cite>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="services" class="services">
-    <div class="container">
-      <div class="section-header reading-width">
-        <div class="section-label">Areas of Work</div>
-        <h2 class="section-title">The work is usually operational, cross-functional, and execution focused.</h2>
-        <p class="section-description">
-          My involvement typically sits where leadership decisions need to become systems, workflows, reporting, and day-to-day execution.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="service-number">01</div>
-          <h3>Revenue Operations</h3>
-          <p>
-            Designing the systems that support revenue organizations, including CRM architecture, pipeline structure, stage definitions, reporting frameworks, and the operational processes that connect marketing, sales, and customer success.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">02</div>
-          <h3>Cross-Functional Execution</h3>
-          <p>
-            Improving coordination between teams responsible for delivering revenue and customer outcomes. This often includes clarifying ownership, redesigning handoffs, and establishing operating rhythms that keep work moving across departments.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">03</div>
-          <h3>Data &amp; Reporting Infrastructure</h3>
-          <p>
-            Building reporting layers leadership teams can rely on. Work typically includes data structure, governance standards, dashboards, and the systems used to track performance across revenue organizations.
-          </p>
-        </div>
-
-        <div class="service-card">
-          <div class="service-number">04</div>
-          <h3>Program &amp; Project Delivery</h3>
-          <p>
-            Leading complex operational projects such as CRM implementations, system migrations, product launches, and process redesign. My project background provides structure around scope, timelines, ownership, and adoption.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="experience">
-    <div class="container">
-      <div class="section-header reading-width">
-        <div class="section-label">Selected Experience</div>
-        <h2 class="section-title">Work I can explain clearly, with context.</h2>
-        <p class="section-description">
-          I prefer grounded descriptions over headline claims. These examples reflect the types of work I’ve led or supported inside operating environments.
-        </p>
-      </div>
-
-      <div class="experience-grid">
-        <div class="experience-card">
-          <p class="experience-description">
-            Supported revenue operations for education businesses where annual funnel revenue expanded from approximately $27M to $39M between 2022 and 2023.
-          </p>
-          <p class="experience-note">Systems, reporting infrastructure, and cross-department execution</p>
-        </div>
-
-        <div class="experience-card">
-          <p class="experience-description">
-            Led or supported nineteen operational projects involving CRM development, system migrations, integrations, and internal infrastructure improvements.
-          </p>
-          <p class="experience-note">Project delivery, developer coordination, testing, and rollout support</p>
-        </div>
-
-        <div class="experience-card">
-          <p class="experience-description">
-            Designed reporting and governance frameworks used by leadership teams to track revenue performance, project execution, and operational health.
-          </p>
-          <p class="experience-note">Reporting structure, naming standards, and management visibility</p>
-        </div>
-
-        <div class="experience-card">
-          <p class="experience-description">
-            Redesigned billing and follow-up processes that significantly improved collections consistency within a services organization.
-          </p>
-          <p class="experience-note">Process design, accountability loops, and operational follow-through</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="how" class="how-work">
-    <div class="container">
-      <div class="section-header reading-width">
-        <div class="section-label">Approach</div>
-        <h2 class="section-title">A consistent sequence for operational work.</h2>
-        <p class="section-description">
-          The work changes by company. The sequence usually does not.
-        </p>
-      </div>
-
-      <div class="how-grid">
-        <div class="how-card">
-          <div class="how-step">Step 1</div>
-          <h3>Map the current system</h3>
-          <p>
-            Understand how work actually moves through the organization, including tools, ownership, handoffs, and failure points.
-          </p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-step">Step 2</div>
-          <h3>Define structure</h3>
-          <p>
-            Clarify ownership, standards, and expectations around how work should move across teams.
-          </p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-step">Step 3</div>
-          <h3>Implement systems</h3>
-          <p>
-            Design workflows, CRM structure, reporting frameworks, automation logic, and supporting documentation.
-          </p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-step">Step 4</div>
-          <h3>Make performance visible</h3>
-          <p>
-            Build dashboards and operating rhythms that allow leadership teams to monitor execution and identify issues early.
-          </p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-step">Step 5</div>
-          <h3>Transfer ownership</h3>
-          <p>
-            Ensure the system remains functional without ongoing external support by training the right owners and tightening the operating model.
-          </p>
-        </div>
-
-        <div class="how-card">
-          <div class="how-step">Step 6</div>
-          <h3>Refine where needed</h3>
-          <p>
-            As growth creates new constraints, the system is adjusted without rebuilding everything from scratch.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contact" class="contact">
-    <div class="container">
-      <div class="contact-card">
-        <div class="section-label">Contact</div>
-        <h2 class="section-title">Open to the right operational problems.</h2>
-        <p class="section-description">
-          If your organization is growing and execution is becoming more complex — across revenue systems, reporting infrastructure, or cross-team coordination — I’m open to a conversation.
+    <section id="work" class="section section-soft">
+      <div class="container">
+        <span class="eyebrow">Areas of Work</span>
+        <h2>Where I have created value</h2>
+        <p class="lead">
+          My work has consistently landed in the same places: systems, execution, process clarity, cross-functional coordination, project delivery, leadership support, and performance infrastructure.
         </p>
 
-        <div class="contact-buttons">
-          <a href="mailto:rfneve@gmail.com" class="btn-primary">Email Me</a>
-          <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer" class="btn-secondary">Connect on LinkedIn</a>
+        <div class="cap-grid">
+          <div class="cap-card">
+            <div class="cap-index">01</div>
+            <h3>Operations and process architecture</h3>
+            <p>
+              Mapping workflows, identifying failure points, reverse engineering bottlenecks, and building the structure that keeps execution moving.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-index">02</div>
+            <h3>Revenue operations and sales systems</h3>
+            <p>
+              CRM logic, funnel visibility, accountability systems, follow-up discipline, rep performance structure, and operational support for revenue teams.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-index">03</div>
+            <h3>Project and program leadership</h3>
+            <p>
+              Cross-functional initiatives, requirements gathering, rollout planning, implementation management, UAT, and the connective tissue between departments.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-index">04</div>
+            <h3>Data integrity and reporting discipline</h3>
+            <p>
+              Naming conventions, source-of-truth logic, dashboard structure, spreadsheet architecture, and greater trust in the operating data.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-index">05</div>
+            <h3>Communication and accountability</h3>
+            <p>
+              Clear expectations, better messaging by audience, stronger leadership communication, and practical accountability that does not depend on constant intervention.
+            </p>
+          </div>
+
+          <div class="cap-card">
+            <div class="cap-index">06</div>
+            <h3>Leadership support and operator leverage</h3>
+            <p>
+              Helping executives, directors, and managers think more clearly, execute more cleanly, and lead with higher standards.
+            </p>
+          </div>
         </div>
 
-        <p class="contact-info">
-          Prefer phone? <a href="tel:+17042396872">(704) 239-6872</a>
-        </p>
+        <div style="margin-top: 28px;">
+          <div class="quote-card">
+            <blockquote>
+              "I noticed last quarter how thoughtful and intentional all of your TAs were. The same thought occurred to me this round. I really appreciate how much consideration you give to these. It's not just about how it impacts your people (though that is important). It makes a difference in terms of the standards and expectations we set. We need more leaders to do what you are doing and that use TAs to level up their teams and as a result, level up ENTRE as a whole."
+            </blockquote>
+            <cite>Image 2 (amberlutui_talent_assess_impact.png)</cite>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="outcomes" class="section section-dark">
+      <div class="container">
+        <span class="eyebrow">Selected Outcomes</span>
+        <h2>Factual outcomes from the work</h2>
+        <p class="lead">
+          I prefer bounded statements tied to actual work. These are representative examples, not inflated abstractions.
+        </p>
+
+        <div class="outcomes-grid">
+          <div class="outcome-card">
+            <div class="outcome-stat">96.95%</div>
+            <p>Accounts receivable collection rate achieved through redesign of process, accountability, and follow-up.</p>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-stat">$27M → $39M</div>
+            <p>Sales funnel gross revenue managed across consecutive years inside a scaling business environment.</p>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-stat">19</div>
+            <p>Projects led at ENTRE Institute between 2022 and 2024, many of them involving direct collaboration with software developers on custom CRM and systems work.</p>
+            <span class="outcome-note">This was one slice of the work, not the total count of projects across my career.</span>
+          </div>
+
+          <div class="outcome-card">
+            <div class="outcome-stat">10+ years</div>
+            <p>Cross-functional work across operations, sales operations, PMO, business systems, reporting, revenue support, and project deployment.</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <div class="quote-card" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.10); box-shadow: none;">
+            <blockquote style="color: #fff;">
+              "Anytime you start to have any voice of limitation in your head, just know in the short time you have been here, in the minimal hours you were contracted to work, you have made the greatest impact on our systems, software's and how we approach problem solving from a macro perspective. Keep crushing it man and I look forward to hearing about your next venture. Stay in touch!"
+            </blockquote>
+            <cite style="color: rgba(244,246,247,0.68);">Image 6 (marquisrichardson_4_18_25_compliment_on_impact.png)</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="timeline" class="section">
+      <div class="container">
+        <span class="eyebrow">Career Snapshot</span>
+        <h2>Roles and environments</h2>
+        <p class="lead">
+          My path has crossed sales, operations, project management, leadership support, financial services, and education businesses. The common thread has been structure, execution, and improvement.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div class="timeline-role">Chief of Staff</div>
+              <div class="timeline-date">2025</div>
+            </div>
+            <div class="timeline-company">Stock Navigators</div>
+            <p>
+              Cross-functional execution across Sales, Marketing, CS, and Product. Sales performance analysis, pipeline improvement, data integrity, process redesign, and leadership support.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div class="timeline-role">Sales Operations Director</div>
+              <div class="timeline-date">2022–2024</div>
+            </div>
+            <div class="timeline-company">ENTRE Institute</div>
+            <p>
+              Led 19 projects involving CRM design, systems changes, telephony integration, product transitions, migrations, reporting, and cross-functional implementation work with developers.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div class="timeline-role">Publishing Partner / PMO Leadership</div>
+              <div class="timeline-date">2021–2022</div>
+            </div>
+            <div class="timeline-company">New Reach Education</div>
+            <p>
+              PMO structure, launch planning, resource management, reporting, and operational scaffolding for brand and initiative execution.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-top">
+              <div class="timeline-role">Brand Lead / Operations Support / Revenue Systems Work</div>
+              <div class="timeline-date">Prior years</div>
+            </div>
+            <div class="timeline-company">Education, financial services, and scaling business environments</div>
+            <p>
+              Sales operations, process improvement, growth support, accountability systems, and reporting discipline across multiple operating contexts.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top: 28px;">
+          <div class="quote-card">
+            <blockquote>
+              "Hey Rob I hope you're well and all is good with your new role. Wanted to tell you that what I learned from you at new reach has impacted my growth and ability to do well in my current position, so thank you 🙏
+
+All the diagrams and workflows we did. We are moving one of the teams over to sprints and building out how that would look for this specific part of the project has been extremely helpful. Also, being confident in asking questions and making sure everyone is really getting action items. Unfortunately our team doesn't use Monday but having that experience has helped me Navigate Jira a bit"
+            </blockquote>
+            <cite>Image 7 (meganfunkhouser_compliment_on_teachings.png)</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="quotes" class="section section-soft">
+      <div class="container">
+        <span class="eyebrow">Quotes</span>
+        <h2>What people have said</h2>
+        <p class="lead">
+          These are included as provided.
+        </p>
+
+        <div class="quotes-grid">
+          <div class="quote-card">
+            <blockquote>
+              "On corp leads... "and we are about ready to be able to implement this under the Rob Neve framework"
+
+Just thought you would want to know that you are still being talked about over here. Your brain frequencies are still resonating through this company. Insane. Thats how talented you are!!!"
+            </blockquote>
+            <cite>Chad Spady (Text thread)</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "I was thinking a lot about our conversation yesterday after the fact and I almost messaged you on it. But yeah I it's funny like even after that I talked to someone and they were talking about, like they asked me, if I know who rob rob neve was. and I was like yeah, they're like new. It is like yeah like he gets brought up like all over the place and this and that about this process, that process and just being organized and how he was so technical and all this other stuff. And I almost texted, I was just like dude like I don't know like that feels like the writing's on the wall everywhere that you know that talk had any impact on yesterday just like permission to go get what you want in life bro."
+            </blockquote>
+            <cite>Chad Spady (Text thread 2)</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "@channel High level overview of the product launch steps from the marketing point of view 👍
+
+This is just version 1, will continue to get better and more efficient.
+
+Big shoutout to @Rob Neve for taking my messy brain and translating those thoughts into an organized flow chart. Cheers to you!"
+            </blockquote>
+            <cite>Image 3 (calebcruz_rob_flowcharts.PNG)</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "Hey Rob.. just for the record you are aloud to say that you make a lot of impact and that you help steer the ship because its true, and no one will look at you differently for making that claim
+
+At least that is how I look at how you impact this sales org and this company as a whole
+
+just wanted to give you permission to say those things. It will not come off as arrogant or egregious
+
+❤️"
+            </blockquote>
+            <cite>Image 4 (chadspady_compliment_on_steering_ship.PNG)</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "Solidly lives out the core values and encourages others to as well."
+            </blockquote>
+            <cite>Adam Whiting Review — Culture</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "In stepping into more of a leadership role in Q2, I think Rob has had the opportunity to really show his knowledge and skills around how to be a great leader. He has also taken multiple younger leaders (Steven and Alex S) under his wing and has helped them level up and be more confident in their roles.
+
+His knowledge in the area of project management really helped marketing become more efficient and effective in how they operate in Q2. When he stepped out of the process in creative, the productivity basically stopped, which means he was a key driver there and we learned a hard lesson."
+            </blockquote>
+            <cite>Adam Whiting Review — K&amp;S</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "Todd: I really see him making strides in his thoughtful communication and putting in a lot of effort.
+
+Randy: Change in Rob has come from new CRO leadership. Great to see him coming out of his shell.
+
+Darren: Appreciate his direct communication style. Sometimes he tries to get around processes and procedures (going to Raj). Follow the process as much as possible or escalate when needed.
+
+Joe: I like the way he clearly communicates the why behind his communication. The other thing I would note about Rob is that as we are trying to break some bad habits in the org, it is becoming easy to spot the leaders who are at the forefront of resetting the expectations to the level of excellence we are looking for and Rob is one of those leaders. I noticed that about him and Matt on several occasions including the talent assessments. They both see a high standard as the status quo which we really need in our leaders right now."
+            </blockquote>
+            <cite>Adam Whiting Review — Notes from team</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "Leveling up his personal productivity systems
+Mentoring other team members on leadership and productivity systems
+Being flexible about his seat on the bus and wanting to go where ENTRE needs him most
+Delegating to team members more aggressively and giving effective feedback
+Effective onboarding of new sales ops lead
+Communicating directly, but respectfully"
+            </blockquote>
+            <cite>Adam Whiting Review — Performance - Doing Well</cite>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h2>Reach me directly</h2>
+        <p class="lead">
+          rob@neveconsulting.com • 425-414-4375
+        </p>
+
+        <div class="contact-panel">
+          <div>
+            <h3 style="margin-bottom: 8px;">Links</h3>
+            <p style="color: var(--text-soft);">
+              Email is the cleanest way to reach me. LinkedIn is below as well.
+            </p>
+          </div>
+
+          <div class="contact-links">
+            <a href="mailto:rob@neveconsulting.com">Email</a>
+            <a href="tel:+14254144375">Call</a>
+            <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="footer-inner">
-      <img
-        src="images/NeveConsultingLLC_FinalLogos_ALL-01.png"
-        alt="Neve Consulting"
-        class="footer-logo"
-        onerror="this.classList.add('hide-broken'); this.nextElementSibling.style.display='block';"
-      >
-      <div class="footer-title" style="display:none;">Neve Consulting</div>
-
-      <p>
-        Neve Consulting, LLC — operational systems, reporting infrastructure, and cross-functional execution for growing organizations.
-      </p>
-
-      <div class="footer-links">
-        <a href="mailto:rfneve@gmail.com">Email</a>
-        <a href="https://linkedin.com/in/robertneve2" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <div class="footer-left">
+        <img id="footerLogo" class="footer-logo" src="" alt="Neve Consulting logo" />
+        <div class="footer-meta">
+          Neve Consulting, LLC<br />
+          Rob Neve
+        </div>
       </div>
 
-      <p class="footer-bottom">&copy; 2026 Neve Consulting, LLC. All rights reserved.</p>
+      <div class="footer-meta">
+        &copy; 2026 Neve Consulting, LLC. All rights reserved.
+      </div>
     </div>
   </footer>
+
+  <script>
+    document.getElementById("navLogo").src = LOGO_URL;
+    document.getElementById("footerLogo").src = LOGO_URL;
+    document.getElementById("heroPhoto").src = HEADSHOT_URL;
+  </script>
 </body>
 </html>

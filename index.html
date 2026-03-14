@@ -122,7 +122,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(15,17,19,0.92);
+      background: rgba(15,17,19,0.94);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
@@ -130,32 +130,36 @@
     .nav-inner {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 14px 28px;
+      padding: 16px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
 
     .nav-brand {
       display: flex;
       align-items: center;
-      gap: 14px;
       text-decoration: none;
-      min-width: 200px;
+      min-width: 220px;
+      flex-shrink: 0;
     }
 
     .nav-logo {
-      height: 48px;
+      height: 54px;
       width: auto;
-      max-width: 200px;
-     }
+      max-width: 220px;
+      object-fit: contain;
+      display: block;
+    }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       list-style: none;
       flex-wrap: wrap;
+      justify-content: center;
+      flex: 1;
     }
 
     .nav-links a {
@@ -172,12 +176,13 @@
     .nav-contact {
       text-decoration: none;
       color: #fff;
-      background: var(--brand);
-      padding: 11px 18px;
+      background: rgba(46,81,89,0.9);
+      padding: 11px 16px;
       border-radius: 10px;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 700;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     /* Hero */
@@ -254,14 +259,22 @@
       border-radius: 22px;
       padding: 18px;
       box-shadow: 0 18px 48px rgba(0,0,0,0.22);
+      max-width: 430px;
+      margin-left: auto;
     }
 
     .hero-photo {
+      display: block;
       width: 100%;
+      height: auto;
       aspect-ratio: 4 / 5;
       object-fit: cover;
+      object-position: center 18%;
       border-radius: 16px;
       background: #222;
+      image-rendering: auto;
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     .hero-note {
@@ -315,6 +328,7 @@
     .quote-card blockquote {
       font-size: 1rem;
       color: var(--text);
+      white-space: pre-line;
     }
 
     .quote-card cite {
@@ -354,6 +368,26 @@
       color: var(--text-soft);
     }
 
+    /* Selected work */
+    .selected-work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 42px;
+    }
+
+    .selected-work-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .selected-work-card p {
+      color: var(--text-soft);
+    }
+
     /* Outcomes */
     .outcomes-grid {
       display: grid;
@@ -363,29 +397,31 @@
     }
 
     .outcome-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: var(--radius);
-      padding: 28px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 32px;
     }
 
     .outcome-stat {
-      font-size: 2.4rem;
+      font-size: 2.8rem;
       font-weight: 850;
       color: var(--brand-2);
       line-height: 1;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .outcome-card p {
-      color: rgba(244,246,247,0.84);
+      color: rgba(244,246,247,0.86);
+      font-size: 1.03rem;
+      line-height: 1.65;
     }
 
     .outcome-note {
       display: block;
-      margin-top: 10px;
+      margin-top: 12px;
       font-size: 0.9rem;
-      color: rgba(244,246,247,0.58);
+      color: rgba(244,246,247,0.60);
     }
 
     /* Timeline */
@@ -513,6 +549,7 @@
       .hero-grid,
       .about-grid,
       .cap-grid,
+      .selected-work-grid,
       .outcomes-grid,
       .quotes-grid,
       .contact-panel {
@@ -539,15 +576,16 @@
         padding-bottom: 72px;
       }
 
-      .container,
       .nav-inner,
+      .container,
       .footer-inner {
         padding-left: 20px;
         padding-right: 20px;
       }
 
       .nav-logo {
-        height: 42px;
+        height: 46px;
+        max-width: 180px;
       }
 
       .footer-logo {
@@ -558,15 +596,10 @@
 </head>
 <body>
 
-  <!--
-    REPLACE THESE TWO URLS
-    1) logo_horizontal.png
-    2) rob-front-looking.jpeg
-  -->
   <script>
-  const LOGO_URL = "https://rfneve.github.io/images/NC_horizontal_logo_white_600.png";
-  const HEADSHOT_URL = "https://rfneve.github.io/images/rob_front_looking.jpeg";
-</script>
+    const LOGO_URL = "https://rfneve.github.io/images/logo_horizontal.png";
+    const HEADSHOT_URL = "https://rfneve.github.io/images/rob_front_looking.jpeg";
+  </script>
 
   <nav>
     <div class="nav-inner">
@@ -577,7 +610,8 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#work">Areas of Work</a></li>
-        <li><a href="#outcomes">Selected Outcomes</a></li>
+        <li><a href="#selected-work">Selected Work</a></li>
+        <li><a href="#outcomes">Outcomes</a></li>
         <li><a href="#timeline">Career Snapshot</a></li>
         <li><a href="#quotes">Quotes</a></li>
       </ul>
@@ -595,10 +629,10 @@
             <div class="hero-badge">Chief of Staff • Integrator • Director of Operations</div>
             <h1>Systems, execution, and cross-functional leadership.</h1>
             <p>
-              I work at the point where strategy breaks down and execution needs structure. My background sits across operations, project leadership, revenue systems, data integrity, communication, and accountability. I have spent more than a decade building clarity inside organizations where growth, complexity, and handoffs create friction.
+              I work where strategy, execution, and cross-functional reality meet. My background spans operations, project leadership, revenue systems, data integrity, communication, and accountability.
             </p>
             <p>
-              This site is a portfolio. It is meant to show how I think, what I build, and the kind of work I have done.
+              I have spent more than a decade building clarity inside organizations where growth, complexity, and handoffs create friction.
             </p>
 
             <div class="hero-actions">
@@ -727,12 +761,66 @@
       </div>
     </section>
 
+    <section id="selected-work" class="section">
+      <div class="container">
+        <span class="eyebrow">Selected Work</span>
+        <h2>Representative examples of the work</h2>
+        <p class="lead">
+          These are examples of the kinds of operating problems I have been trusted to solve across revenue teams, leadership environments, and cross-functional initiatives.
+        </p>
+
+        <div class="selected-work-grid">
+          <div class="selected-work-card">
+            <h3>CRM and revenue process implementation</h3>
+            <p>
+              Worked across CRM structure, sales process logic, reporting expectations, and handoff points so teams had cleaner visibility into pipeline movement and rep execution.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>Cross-functional project delivery with developers</h3>
+            <p>
+              Led requirements gathering, project structure, communication, and rollout support on projects that sat between business teams and technical teams.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>PMO and launch planning structure</h3>
+            <p>
+              Built planning frameworks, launch scaffolding, and operational structure so teams could execute initiatives with greater clarity, sequencing, and accountability.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>Sales accountability and KPI operating cadence</h3>
+            <p>
+              Established scorecards, review rhythms, pipeline expectations, and follow-up discipline to make sales performance more visible and more manageable.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>Data integrity and reporting improvement</h3>
+            <p>
+              Clarified naming conventions, source-of-truth logic, dashboard structure, and spreadsheet architecture so leadership could trust what they were seeing.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>Leadership support through operating structure</h3>
+            <p>
+              Helped executives and department leaders translate ideas into workable systems, clearer communication, and more durable execution.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="outcomes" class="section section-dark">
       <div class="container">
         <span class="eyebrow">Selected Outcomes</span>
         <h2>Factual outcomes from the work</h2>
         <p class="lead">
-          I prefer bounded statements tied to actual work. These are representative examples, not inflated abstractions.
+          These examples are included because they are bounded, factual, and representative of the kind of operating work I have done.
         </p>
 
         <div class="outcomes-grid">
@@ -774,7 +862,7 @@
         <span class="eyebrow">Career Snapshot</span>
         <h2>Roles and environments</h2>
         <p class="lead">
-          My path has crossed sales, operations, project management, leadership support, financial services, and education businesses. The common thread has been structure, execution, and improvement.
+          My path has consistently centered on the same kind of work: structure, execution, systems thinking, and cross-functional improvement.
         </p>
 
         <div class="timeline">
@@ -785,7 +873,7 @@
             </div>
             <div class="timeline-company">Stock Navigators</div>
             <p>
-              Cross-functional execution across Sales, Marketing, CS, and Product. Sales performance analysis, pipeline improvement, data integrity, process redesign, and leadership support.
+              Worked across Sales, Marketing, Customer Success, and Product to improve execution, pipeline structure, performance analysis, and operational clarity.
             </p>
           </div>
 
@@ -796,7 +884,7 @@
             </div>
             <div class="timeline-company">ENTRE Institute</div>
             <p>
-              Led 19 projects involving CRM design, systems changes, telephony integration, product transitions, migrations, reporting, and cross-functional implementation work with developers.
+              Led CRM, systems, reporting, and implementation work across 19 documented projects involving developers, technical changes, process redesign, and cross-functional execution.
             </p>
           </div>
 
@@ -807,7 +895,7 @@
             </div>
             <div class="timeline-company">New Reach Education</div>
             <p>
-              PMO structure, launch planning, resource management, reporting, and operational scaffolding for brand and initiative execution.
+              Built planning structure, launch scaffolding, reporting logic, and operational discipline to support brand execution and cross-functional alignment.
             </p>
           </div>
 
@@ -818,7 +906,7 @@
             </div>
             <div class="timeline-company">Education, financial services, and scaling business environments</div>
             <p>
-              Sales operations, process improvement, growth support, accountability systems, and reporting discipline across multiple operating contexts.
+              Supported growth, sales operations, accountability systems, and reporting discipline across education, financial services, and scaling business environments.
             </p>
           </div>
         </div>
@@ -856,13 +944,6 @@ Just thought you would want to know that you are still being talked about over h
 
           <div class="quote-card">
             <blockquote>
-              "I was thinking a lot about our conversation yesterday after the fact and I almost messaged you on it. But yeah I it's funny like even after that I talked to someone and they were talking about, like they asked me, if I know who rob rob neve was. and I was like yeah, they're like new. It is like yeah like he gets brought up like all over the place and this and that about this process, that process and just being organized and how he was so technical and all this other stuff. And I almost texted, I was just like dude like I don't know like that feels like the writing's on the wall everywhere that you know that talk had any impact on yesterday just like permission to go get what you want in life bro."
-            </blockquote>
-            <cite>Chad Spady (Text thread 2)</cite>
-          </div>
-
-          <div class="quote-card">
-            <blockquote>
               "@channel High level overview of the product launch steps from the marketing point of view 👍
 
 This is just version 1, will continue to get better and more efficient.
@@ -870,6 +951,15 @@ This is just version 1, will continue to get better and more efficient.
 Big shoutout to @Rob Neve for taking my messy brain and translating those thoughts into an organized flow chart. Cheers to you!"
             </blockquote>
             <cite>Image 3 (calebcruz_rob_flowcharts.PNG)</cite>
+          </div>
+
+          <div class="quote-card">
+            <blockquote>
+              "In stepping into more of a leadership role in Q2, I think Rob has had the opportunity to really show his knowledge and skills around how to be a great leader. He has also taken multiple younger leaders (Steven and Alex S) under his wing and has helped them level up and be more confident in their roles.
+
+His knowledge in the area of project management really helped marketing become more efficient and effective in how they operate in Q2. When he stepped out of the process in creative, the productivity basically stopped, which means he was a key driver there and we learned a hard lesson."
+            </blockquote>
+            <cite>Adam Whiting Review — K&amp;S</cite>
           </div>
 
           <div class="quote-card">
@@ -884,48 +974,11 @@ just wanted to give you permission to say those things. It will not come off as 
             </blockquote>
             <cite>Image 4 (chadspady_compliment_on_steering_ship.PNG)</cite>
           </div>
-
-          <div class="quote-card">
-            <blockquote>
-              "Solidly lives out the core values and encourages others to as well."
-            </blockquote>
-            <cite>Adam Whiting Review — Culture</cite>
-          </div>
-
-          <div class="quote-card">
-            <blockquote>
-              "In stepping into more of a leadership role in Q2, I think Rob has had the opportunity to really show his knowledge and skills around how to be a great leader. He has also taken multiple younger leaders (Steven and Alex S) under his wing and has helped them level up and be more confident in their roles.
-
-His knowledge in the area of project management really helped marketing become more efficient and effective in how they operate in Q2. When he stepped out of the process in creative, the productivity basically stopped, which means he was a key driver there and we learned a hard lesson."
-            </blockquote>
-            <cite>Adam Whiting Review — K&amp;S</cite>
-          </div>
-
-          <div class="quote-card">
-            <blockquote>
-              "Todd: I really see him making strides in his thoughtful communication and putting in a lot of effort.
-
-Randy: Change in Rob has come from new CRO leadership. Great to see him coming out of his shell.
-
-Darren: Appreciate his direct communication style. Sometimes he tries to get around processes and procedures (going to Raj). Follow the process as much as possible or escalate when needed.
-
-Joe: I like the way he clearly communicates the why behind his communication. The other thing I would note about Rob is that as we are trying to break some bad habits in the org, it is becoming easy to spot the leaders who are at the forefront of resetting the expectations to the level of excellence we are looking for and Rob is one of those leaders. I noticed that about him and Matt on several occasions including the talent assessments. They both see a high standard as the status quo which we really need in our leaders right now."
-            </blockquote>
-            <cite>Adam Whiting Review — Notes from team</cite>
-          </div>
-
-          <div class="quote-card">
-            <blockquote>
-              "Leveling up his personal productivity systems
-Mentoring other team members on leadership and productivity systems
-Being flexible about his seat on the bus and wanting to go where ENTRE needs him most
-Delegating to team members more aggressively and giving effective feedback
-Effective onboarding of new sales ops lead
-Communicating directly, but respectfully"
-            </blockquote>
-            <cite>Adam Whiting Review — Performance - Doing Well</cite>
-          </div>
         </div>
+
+        <p style="margin-top: 20px; color: var(--text-soft); font-size: 0.96rem;">
+          Additional endorsements available on request.
+        </p>
       </div>
     </section>
 

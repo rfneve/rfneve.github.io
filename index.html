@@ -185,13 +185,36 @@
       flex-shrink: 0;
     }
 
+    /* Top quote */
+    .top-quote {
+      background: var(--bg);
+      color: var(--text-inverse);
+      padding: 26px 0 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .top-quote blockquote {
+      font-size: 1.02rem;
+      color: rgba(244,246,247,0.92);
+      max-width: 980px;
+    }
+
+    .top-quote cite {
+      display: block;
+      margin-top: 10px;
+      font-style: normal;
+      color: rgba(244,246,247,0.66);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
     /* Hero */
     .hero {
       background:
         linear-gradient(135deg, rgba(46,81,89,0.18), rgba(151,168,172,0.08)),
         var(--bg);
       color: var(--text-inverse);
-      padding: 82px 0 88px;
+      padding: 60px 0 88px;
     }
 
     .hero-grid {
@@ -576,6 +599,10 @@
         padding-bottom: 72px;
       }
 
+      .top-quote {
+        padding-top: 20px;
+      }
+
       .nav-inner,
       .container,
       .footer-inner {
@@ -622,6 +649,15 @@
 
   <main id="top">
 
+    <section class="top-quote">
+      <div class="container">
+        <blockquote>
+          "One of the things top leaders need is someone who is going to tell you the brutal truth even if it goes against your beliefs or opinions."
+        </blockquote>
+        <cite>President Jimmy Carter</cite>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -629,10 +665,10 @@
             <div class="hero-badge">Chief of Staff • Integrator • Director of Operations</div>
             <h1>Systems, execution, and cross-functional leadership.</h1>
             <p>
-              I work where strategy, execution, and cross-functional reality meet. My background spans operations, project leadership, revenue systems, data integrity, communication, and accountability.
+              I work where founder vision, operating reality, and execution discipline meet. My background spans operations, project leadership, revenue systems, data integrity, communication, accountability, and the infrastructure that allows teams to scale cleanly.
             </p>
             <p>
-              I have spent more than a decade building clarity inside organizations where growth, complexity, and handoffs create friction.
+              I extract implicit knowledge, convert it into visible systems, and build the operating structure that keeps work moving when growth, complexity, and handoffs begin to create friction.
             </p>
 
             <div class="hero-actions">
@@ -666,7 +702,7 @@
         <span class="eyebrow">About</span>
         <h2>What I do well</h2>
         <p class="lead">
-          I build structure where there is ambiguity. I map reality, tighten process, clarify ownership, improve communication, and make performance more visible. My value has never come from volume of motion. It has come from seeing what is breaking, why it is breaking, and what needs to be built so the work can move.
+          I build clarity where there is ambiguity. I map reality, tighten process, clarify ownership, improve communication, and make performance more visible. My value has never come from volume of motion. It has come from seeing what is breaking, why it is breaking, and what needs to be built so the work can move.
         </p>
 
         <div class="about-grid" style="margin-top: 40px;">
@@ -675,13 +711,22 @@
               My career has developed across education businesses, financial services, revenue organizations, and operator-heavy environments where execution matters. I have worked as Chief of Staff, Integrator, Director of Operations, Sales Operations Director, Publishing Partner, and in adjacent roles where the real work sat between departments rather than neatly inside one of them.
             </p>
             <p>
-              I am at my best inside environments that need systems, operating cadence, process architecture, project leadership, clean communication, and accountability. I do not need spotlight. I do not need noise. I want the work to function.
+              I am at my best inside environments that need systems, operating cadence, process architecture, project leadership, clean communication, and accountability. I push toward visible structure: owners, priorities, due dates, records, task clarity, and operating rhythm.
             </p>
             <p>
               I have spent over 10 years working cross-functionally deploying, building, improving, and operationalizing projects and systems. The 19 projects listed on my resume were a resume constraint, not the totality of my work.
             </p>
           </div>
 
+          <div class="quote-card">
+            <blockquote>
+              "...when you're around, when we know you're a meeting attendee, it requires everyone to level up. You ask the hard questions that often go overlooked and we need to be prepared to operate on that level."
+            </blockquote>
+            <cite>Angela May, PhD - ENTRE Institute 2023</cite>
+          </div>
+        </div>
+
+        <div style="margin-top: 28px;">
           <div class="quote-card">
             <blockquote>
               "@Rob Neve ++3 Houston. For being an amazing executor for the sales org lately. I know he has his hands in all departments but the work you have helped myself and the managers facilitate alone wouldn't have been possible without you. I can't even put into words how much you are transforming the sales org for the better and its just the beginning."
@@ -705,7 +750,7 @@
             <div class="cap-index">01</div>
             <h3>Operations and process architecture</h3>
             <p>
-              Mapping workflows, identifying failure points, reverse engineering bottlenecks, and building the structure that keeps execution moving.
+              Mapping workflows, identifying failure points, extracting hidden knowledge, and building the structure that keeps execution moving.
             </p>
           </div>
 
@@ -713,7 +758,7 @@
             <div class="cap-index">02</div>
             <h3>Revenue operations and sales systems</h3>
             <p>
-              CRM logic, funnel visibility, accountability systems, follow-up discipline, rep performance structure, and operational support for revenue teams.
+              Pipeline architecture, KPI definitions, tag logic, custom fields, payment-plan tracking, reporting structure, and operational support for revenue teams.
             </p>
           </div>
 
@@ -721,7 +766,7 @@
             <div class="cap-index">03</div>
             <h3>Project and program leadership</h3>
             <p>
-              Cross-functional initiatives, requirements gathering, rollout planning, implementation management, UAT, and the connective tissue between departments.
+              Cross-functional initiatives, requirements gathering, rollout planning, UAT, implementation management, and the connective tissue between business teams and technical execution.
             </p>
           </div>
 
@@ -737,7 +782,7 @@
             <div class="cap-index">05</div>
             <h3>Communication and accountability</h3>
             <p>
-              Clear expectations, better messaging by audience, stronger leadership communication, and practical accountability that does not depend on constant intervention.
+              Clear expectations, better messaging by audience, stronger leadership communication, and practical accountability grounded in ownership, priority, and follow-through.
             </p>
           </div>
 
@@ -745,7 +790,7 @@
             <div class="cap-index">06</div>
             <h3>Leadership support and operator leverage</h3>
             <p>
-              Helping executives, directors, and managers think more clearly, execute more cleanly, and lead with higher standards.
+              Helping executives, founders, directors, and managers translate ideas into workable infrastructure, lower cognitive load, and execute with greater clarity.
             </p>
           </div>
         </div>
@@ -766,49 +811,49 @@
         <span class="eyebrow">Selected Work</span>
         <h2>Representative examples of the work</h2>
         <p class="lead">
-          These are examples of the kinds of operating problems I have been trusted to solve across revenue teams, leadership environments, and cross-functional initiatives.
+          These examples reflect the kinds of operating problems I have been trusted to solve across revenue teams, leadership environments, and cross-functional initiatives.
         </p>
 
         <div class="selected-work-grid">
           <div class="selected-work-card">
-            <h3>CRM and revenue process implementation</h3>
+            <h3>Executive operating cleanup and infrastructure mapping</h3>
             <p>
-              Worked across CRM structure, sales process logic, reporting expectations, and handoff points so teams had cleaner visibility into pipeline movement and rep execution.
+              Built foundational operating structure by mapping org roles, access dependencies, client infrastructure, contract locations, billing sprawl, and software usage so a business could clean up before trying to scale faster.
+            </p>
+          </div>
+
+          <div class="selected-work-card">
+            <h3>Sales system architecture and rollout design</h3>
+            <p>
+              Designed multi-phase sales infrastructure spanning pipelines, workflows, KPI logic, UAT, tag taxonomy, and reporting structure so the system could be implemented cleanly rather than patched together.
             </p>
           </div>
 
           <div class="selected-work-card">
             <h3>Cross-functional project delivery with developers</h3>
             <p>
-              Led requirements gathering, project structure, communication, and rollout support on projects that sat between business teams and technical teams.
+              Led requirements gathering, project structure, communication, rollout support, and translation between business teams and technical teams across systems and implementation work.
             </p>
           </div>
 
           <div class="selected-work-card">
-            <h3>PMO and launch planning structure</h3>
+            <h3>KPI and reporting layer design</h3>
             <p>
-              Built planning frameworks, launch scaffolding, and operational structure so teams could execute initiatives with greater clarity, sequencing, and accountability.
+              Built dictionaries, custom fields, tracking layers, spreadsheet architecture, and dashboard thinking so performance could move from manual reporting toward a scalable data system.
             </p>
           </div>
 
           <div class="selected-work-card">
-            <h3>Sales accountability and KPI operating cadence</h3>
+            <h3>Sales accountability and operating cadence</h3>
             <p>
-              Established scorecards, review rhythms, pipeline expectations, and follow-up discipline to make sales performance more visible and more manageable.
+              Established scorecards, review rhythms, pipeline expectations, follow-up discipline, ownership standards, and task clarity to make performance more visible and more manageable.
             </p>
           </div>
 
           <div class="selected-work-card">
-            <h3>Data integrity and reporting improvement</h3>
+            <h3>Productizing internal infrastructure</h3>
             <p>
-              Clarified naming conventions, source-of-truth logic, dashboard structure, and spreadsheet architecture so leadership could trust what they were seeing.
-            </p>
-          </div>
-
-          <div class="selected-work-card">
-            <h3>Leadership support through operating structure</h3>
-            <p>
-              Helped executives and department leaders translate ideas into workable systems, clearer communication, and more durable execution.
+              Identified when internal systems could become reusable client-facing assets by packaging infrastructure, reporting, process design, and delivery logic into something repeatable and sellable.
             </p>
           </div>
         </div>
@@ -841,8 +886,8 @@
           </div>
 
           <div class="outcome-card">
-            <div class="outcome-stat">10+ years</div>
-            <p>Cross-functional work across operations, sales operations, PMO, business systems, reporting, revenue support, and project deployment.</p>
+            <div class="outcome-stat">3 pipelines / 41 tags</div>
+            <p>Designed and implemented a structured sales architecture including pipeline stages, custom fields, KPI definitions, tag taxonomy, revenue tracking logic, and sandbox rollout discipline.</p>
           </div>
         </div>
 
@@ -918,7 +963,7 @@
 
 All the diagrams and workflows we did. We are moving one of the teams over to sprints and building out how that would look for this specific part of the project has been extremely helpful. Also, being confident in asking questions and making sure everyone is really getting action items. Unfortunately our team doesn't use Monday but having that experience has helped me Navigate Jira a bit"
             </blockquote>
-            <cite>Megan Funkhouser - New Reach Education 2024 </cite>
+            <cite>Megan Funkhouser - New Reach Education 2024</cite>
           </div>
         </div>
       </div>
@@ -955,14 +1000,14 @@ Your brain frequencies are still resonating through this company. Insane. Thats 
 
 His knowledge in the area of project management really helped marketing become more efficient and effective in how they operate in Q2. When he stepped out of the process in creative, the productivity basically stopped, which means he was a key driver there and we learned a hard lesson."
             </blockquote>
-            <cite>Adam Whiting — ENTRE Institute 2023</cite>
+            <cite>Adam Whiting - ENTRE Institute 2023</cite>
           </div>
 
           <div class="quote-card">
             <blockquote>
-              "insert another"
+              "Solidly lives out the core values and encourages others to as well."
             </blockquote>
-            <cite>insert citation</cite>
+            <cite>Adam Whiting - ENTRE Institute 2023</cite>
           </div>
         </div>
 
